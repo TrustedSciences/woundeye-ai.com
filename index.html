@@ -3,22 +3,417 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>WoundEye</title>
-  <meta name="description" content="WoundEye — coming soon at woundeye-ai.com">
+  <title>WoundEye — Timely Human Wound Care Advice</title>
+  <meta name="description" content="Capture, assess and track wound healing — with expert clinical review returned to your phone the same day. iOS, Android and web.">
+  <meta name="theme-color" content="#ECE3D1">
   <link rel="canonical" href="https://www.woundeye-ai.com/">
+  <link rel="icon" href="/images/logo.png" type="image/png">
+  <meta property="og:title" content="WoundEye — Timely Human Wound Care Advice">
+  <meta property="og:description" content="Same-day human wound care decision support, on any phone.">
+  <meta property="og:image" content="https://www.woundeye-ai.com/images/screen-carer-home.jpg">
+  <meta property="og:url" content="https://www.woundeye-ai.com/">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&family=Caladea:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/css/styles.css">
 </head>
-<body>
-  <header class="site-header">
-    <a href="/" class="logo">WoundEye</a>
-  </header>
-  <main class="hero">
-    <h1>WoundEye</h1>
-    <p>Our new website is under construction.</p>
-  </main>
-  <footer class="site-footer">
-    <p>&copy; <span id="year"></span> WoundEye</p>
-  </footer>
-  <script src="/js/main.js"></script>
+<body id="top">
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="#top" aria-label="WoundEye, top of page">
+      <img src="/images/logo.png" alt="" width="32" height="32">
+      <span class="brand-name">Wound<em>Eye</em></span>
+    </a>
+    <button class="nav-toggle" aria-expanded="false" aria-controls="site-nav">Menu</button>
+    <nav class="nav" id="site-nav" aria-label="Main">
+      <a href="#why">Why it matters</a>
+      <a href="#platform">Platform</a>
+      <a href="#bodymap">Body map</a>
+      <a href="#markets">Who it's for</a>
+      <a href="#integrations">Data &amp; interfaces</a>
+      <a href="#security">Trust &amp; security</a>
+      <a href="#about">About</a>
+      <a class="btn-ink" href="https://app.woundeye.com/">Sign in</a>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div>
+        <p class="kicker">Same-day human decision support</p>
+        <h1>Take control of your wound care</h1>
+        <p class="hero-sub">The comprehensive platform for capturing, assessing, and tracking wound healing — with expert clinical review returned to your phone the same day.</p>
+        <div class="btn-row">
+          <a class="btn btn-light" href="mailto:access@woundeye.com">Request access</a>
+          <a class="btn btn-ghost" href="#platform">Explore the platform</a>
+        </div>
+        <ul class="hero-tags">
+          <li>Every wound assessed by a clinician</li>
+          <li>FHIR R4</li>
+          <li>Honest compliance posture</li>
+          <li>iOS · Android · Web</li>
+        </ul>
+      </div>
+      <div class="hero-phones" aria-hidden="true">
+        <div class="phone"><img src="/images/screen-carer-home.jpg" alt="" width="562" height="1218"></div>
+        <div class="phone"><img src="/images/screen-assessment-summary.jpg" alt="" width="562" height="1218"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Stats -->
+  <section class="stats-band" aria-label="The scale of the problem">
+    <div class="wrap">
+      <div class="stats">
+        <div class="stat"><div class="v">10.5M</div><p>Medicare beneficiaries living with chronic wounds</p></div>
+        <div class="stat"><div class="v">$22.5B</div><p>Medicare spends on wound care every year</p></div>
+        <div class="stat"><div class="v">150,000</div><p>U.S. diabetes-related amputations each year</p></div>
+        <div class="stat"><div class="v">34%</div><p>Lifetime diabetic foot ulcer risk for people with diabetes</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Why -->
+  <section class="section" id="why">
+    <div class="wrap">
+      <div class="section-head">
+        <div>
+          <p class="kicker">The burden</p>
+          <h2>Why wound care can't wait</h2>
+        </div>
+        <p class="lede">Chronic wounds develop silently and escalate fast. A small ulcer noticed late can become a $50,000+ episode — or an amputation. Early capture, honest measurement, and consistent tracking change that trajectory.</p>
+      </div>
+      <dl class="pillars">
+        <div>
+          <dt>The silent progression</dt>
+          <dd>Diabetes → reduced sensation → unnoticed foot ulcer → infection → amputation. Each step is more expensive and harder to reverse than the last. The window to act is at the beginning, at home, when the wound is small.</dd>
+        </div>
+        <div>
+          <dt>The cost of waiting</dt>
+          <dd>A single manual wound assessment takes a clinician 20–30 minutes and costs $50–$75. One advanced ulcer episode exceeds $50,000, and a Stage 4 pressure ulcer costs $19,000 — much of it avoidable with early, consistent monitoring.</dd>
+        </div>
+        <div>
+          <dt>Prevention over reaction</dt>
+          <dd>WoundEye brings assessment to the wound instead of the wound to the clinic: photograph it at home, get immediate care guidance in seconds, share the record with your care team or our third-party care team before small problems become large ones.</dd>
+        </div>
+      </dl>
+    </div>
+  </section>
+
+  <!-- Platform -->
+  <section class="section paper" id="platform">
+    <div class="wrap">
+      <div class="section-head">
+        <div>
+          <p class="kicker">The platform</p>
+          <h2>A complete wound care platform</h2>
+        </div>
+        <p class="lede">Five modules designed to help patients, caregivers and clinicians capture, understand and track wound healing.</p>
+      </div>
+      <ol class="modules">
+        <li>
+          <span class="num">01</span>
+          <h3>Wound capture</h3>
+          <ul>
+            <li>Guided photo capture at 15–30 cm</li>
+            <li>Body-map location tagging</li>
+            <li>Pain score and context in plain language</li>
+            <li>Works on any phone — no kit required</li>
+          </ul>
+        </li>
+        <li>
+          <span class="num">02</span>
+          <h3>Care assessment</h3>
+          <ul>
+            <li>Structured results in seconds</li>
+            <li>Securely forward the picture to your care team or ours</li>
+            <li>Receive a structured assessment and advice in the app on your phone</li>
+          </ul>
+        </li>
+        <li>
+          <span class="num">03</span>
+          <h3>Interactive body map</h3>
+          <ul>
+            <li>Tap the wound's location on a 3D-rendered figure</li>
+            <li>Region zooms in for pinpoint placement</li>
+            <li>Exact site stored with every record</li>
+            <li>Track the same site visit after visit</li>
+          </ul>
+        </li>
+        <li>
+          <span class="num">04</span>
+          <h3>Healing trends</h3>
+          <ul>
+            <li>Photo timeline of every wound</li>
+            <li>Measurement trends over time</li>
+            <li>Red-flag escalation guidance</li>
+            <li>Share-ready progress reports</li>
+          </ul>
+        </li>
+        <li>
+          <span class="num">05</span>
+          <h3>Clinician governance</h3>
+          <ul>
+            <li>Every wound is assessed by a human</li>
+            <li>Overrides logged with rationale and timestamp</li>
+            <li>Clinician sign-off on assessments</li>
+            <li>Complete audit trail</li>
+          </ul>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- See it working -->
+  <section class="section" id="screens">
+    <div class="wrap">
+      <div class="section-head">
+        <div>
+          <p class="kicker">See it working</p>
+          <h2>Real screens from the live app</h2>
+        </div>
+        <p class="lede">Taken from the production app at <a href="https://woundtracker.app">woundtracker.app</a>.</p>
+      </div>
+
+      <div class="screens-group">
+        <h3>For clinicians</h3>
+        <div class="screens">
+          <figure>
+            <div class="phone"><img src="/images/screen-clinician-dashboard.jpg" alt="Clinician dashboard showing organization, facilities and patients" width="562" height="1218" loading="lazy"></div>
+            <figcaption><b>Dashboard</b> — organizations, facilities and caseload at a glance</figcaption>
+          </figure>
+          <figure>
+            <div class="phone"><img src="/images/screen-my-patients.jpg" alt="My Patients list with patient names and IDs" width="562" height="1218" loading="lazy"></div>
+            <figcaption><b>My Patients</b> — the clinician's caseload in one list</figcaption>
+          </figure>
+          <figure>
+            <div class="phone"><img src="/images/screen-clinical-assessment.jpg" alt="Clinical assessment record marked clinician-reviewed" width="562" height="1218" loading="lazy"></div>
+            <figcaption><b>Structured clinical assessment</b> — completed by a reviewing clinician, on the record</figcaption>
+          </figure>
+        </div>
+      </div>
+
+      <div class="screens-group">
+        <h3>For patients &amp; caregivers</h3>
+        <div class="screens">
+          <figure>
+            <div class="phone"><img src="/images/screen-carer-home.jpg" alt="Carer home screen with option to add a wound photo" width="562" height="1218" loading="lazy"></div>
+            <figcaption><b>Carer home</b> — every family member you care for, kept safely separate</figcaption>
+          </figure>
+          <figure>
+            <div class="phone"><img src="/images/screen-photo-history.jpg" alt="Wound photo history with patient-reported size" width="562" height="1218" loading="lazy"></div>
+            <figcaption><b>Photo history</b> with patient-reported size — “~1.8 cm, about dime-sized”</figcaption>
+          </figure>
+          <figure>
+            <div class="phone"><img src="/images/screen-assessment-summary.jpg" alt="Plain-language assessment summary with buttons to email or consult the doctor" width="562" height="1218" loading="lazy"></div>
+            <figcaption><b>Plain-language assessment summary</b> with one-tap escalation to the doctor</figcaption>
+          </figure>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Body map -->
+  <section class="section paper" id="bodymap">
+    <div class="wrap split">
+      <div>
+        <p class="kicker">Interactive body map</p>
+        <h2>Pin the exact site, visit after visit</h2>
+        <p class="lede mt-1">A body-map experience designed with medical illustrators. Tap the wound's location, zoom into the region, and the precise site is stored with every record.</p>
+        <ul class="checklist">
+          <li>Body-map location tagging with precise wound-site pinning</li>
+          <li>Region zoom for pinpoint placement</li>
+          <li>The same site tracked across every visit</li>
+          <li>New 3D-rendered body figures arriving with V3</li>
+        </ul>
+      </div>
+      <div class="plates">
+        <figure class="plate">
+          <img src="/images/screen-body-map.jpg" alt="Illustrated body figure with the right arm region highlighted" width="420" height="839" loading="lazy">
+          <figcaption>Body-map location tagging</figcaption>
+        </figure>
+        <figure class="plate">
+          <img src="/images/screen-3d-body.jpg" alt="3D-rendered body figure" width="420" height="840" loading="lazy">
+          <figcaption>3D-rendered figures — arriving with V3</figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- Markets -->
+  <section class="section" id="markets">
+    <div class="wrap">
+      <div class="section-head">
+        <div>
+          <p class="kicker">Who it's for</p>
+          <h2>Built for the people who carry the cost of wounds</h2>
+        </div>
+      </div>
+      <div class="roles">
+        <div class="role">
+          <p class="who">B2C</p>
+          <h3>Consumers &amp; caregivers</h3>
+          <p>Manage a wound at home with plain-language guidance and an expert second look — free to start.</p>
+          <ul>
+            <li>Free: photo log, estimated wound measurement, one wound</li>
+            <li>Pro $59–$99/yr: estimated wound measurement, healing trends, clinician sharing</li>
+            <li>Caregiver $9.99/mo: multi-patient and family access</li>
+            <li>English, Arabic and Spanish at launch</li>
+          </ul>
+        </div>
+        <div class="role">
+          <p class="who">B2B</p>
+          <h3>Self-insured employers</h3>
+          <p>67% of U.S. workers are in self-insured plans — and frontline workforces carry the highest diabetic foot ulcer risk.</p>
+          <ul>
+            <li>Mobile wound checks reach workers who can't take clinic time</li>
+            <li>DFU carve-out fits existing chronic-care programs</li>
+            <li>One avoided amputation saves ~$53,800 inpatient cost</li>
+            <li>Deploys alongside diabetes and MSK benefits</li>
+          </ul>
+        </div>
+        <div class="role">
+          <p class="who">MA</p>
+          <h3>Medicare Advantage plans</h3>
+          <p>35.3M beneficiaries. Chronic-condition plans are the fastest-growing MA segment — and skin integrity is a quality measure.</p>
+          <ul>
+            <li>Digital wound platforms already proven in MA: 35% faster healing, 18% visit efficiency</li>
+            <li>A $19K Stage 4 ulcer avoided writes its own ROI case</li>
+            <li>Member-app engagement channel included</li>
+            <li>PMPM pricing scaled to plan size</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Integrations -->
+  <section class="section paper" id="integrations">
+    <div class="wrap">
+      <div class="section-head">
+        <div>
+          <p class="kicker">Integrations</p>
+          <h2>Data interfaces &amp; EHR readiness</h2>
+        </div>
+        <p class="lede">Enterprise-grade foundations, ready to connect to clinical workflows.</p>
+      </div>
+      <ul class="ruled">
+        <li><h3>FHIR R4</h3><p>Structured export in FHIR R4, JSON and CSV — EHR-ready by design.</p></li>
+        <li><h3>Pull API &amp; webhooks</h3><p>RESTful pull API plus HMAC-signed webhooks for event-driven integration.</p></li>
+        <li><h3>Multi-tenant core</h3><p>PostgreSQL row-level security, JWT auth, role-based access. Enterprise-grade isolation.</p></li>
+        <li><h3>Audit trail</h3><p>Every significant action logged — what happened, when, by whom.</p></li>
+        <li><h3>One codebase, three modes</h3><p>React Native / Expo: consumer, employer and clinical modes on iOS, Android and web from a single build.</p></li>
+        <li><h3>White-label ready</h3><p>Multi-tenant architecture supports partner branding and channel deployment.</p></li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Security -->
+  <section class="section ink" id="security">
+    <div class="wrap">
+      <div class="section-head">
+        <div>
+          <p class="kicker">Trust &amp; security</p>
+          <h2>Clinician-governed, privacy-first</h2>
+        </div>
+      </div>
+      <dl class="pillars four">
+        <div>
+          <dt>Clinicians govern</dt>
+          <dd>Clinicians make every call. Each assessment is completed by a qualified reviewer, and any change is recorded with rationale, on the record.</dd>
+        </div>
+        <div>
+          <dt>Honest compliance posture</dt>
+          <dd>The architecture is HIPAA-ready and completion is underway: BAAs, controls, documented data flow and restore drills precede clinical deployment.</dd>
+        </div>
+        <div>
+          <dt>Your data, yours</dt>
+          <dd>Your records are exportable and deletable. No advertising, no data resale.</dd>
+        </div>
+        <div>
+          <dt>Wellness first</dt>
+          <dd>WoundEye launches as a wellness product with clear, honest labeling — clinical claims only when the evidence and clearances exist.</dd>
+        </div>
+      </dl>
+    </div>
+  </section>
+
+  <!-- Partner -->
+  <section class="section" id="partner">
+    <div class="wrap">
+      <p class="kicker">Strategic partner — coming soon</p>
+      <h2>WoundEye + Pindrop Health: prevention to treatment</h2>
+      <p class="pull">Pindrop Health flags metabolic risk 18 months to a decade before a wound appears. WoundEye manages the wound when it does.</p>
+      <ol class="sequence" aria-label="Together, in one patient record, in three languages">
+        <li>Stage</li><li>Flag</li><li>Assess</li><li>Manage</li>
+      </ol>
+      <p class="small mt-1">Together: one patient record, in three languages.</p>
+    </div>
+  </section>
+
+  <!-- About -->
+  <section class="section paper" id="about">
+    <div class="wrap section-head">
+      <div>
+        <p class="kicker">About</p>
+        <h2>About WoundEye</h2>
+      </div>
+      <div>
+        <p class="lede">WoundEye is built by <a href="https://www.wounds-ai.com">Wound Solutions AI</a> — a production platform available today, with same-day expert wound assessment, an auditable clinical workflow, and a body-map experience designed with medical illustrators.</p>
+        <p class="lede">Our mission: make expert-grade wound assessment available wherever the wound is.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta-band">
+    <div class="wrap">
+      <h2>Bring expert wound assessment to wherever the wound is.</h2>
+      <div class="btn-row">
+        <a class="btn btn-ink" href="mailto:access@woundeye.com">Request access</a>
+        <a class="btn btn-line" href="https://app.woundeye.com/">Sign in</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <a class="brand" href="#top"><img src="/images/logo.png" alt="" width="32" height="32"><span class="brand-name">Wound<em>Eye</em></span></a>
+        <p class="mt-1">Timely human wound care advice — capture, assessment and tracking on any phone.</p>
+      </div>
+      <div>
+        <h4>WoundEye</h4>
+        <ul>
+          <li><a href="#platform">Platform</a></li>
+          <li><a href="#markets">Who it's for</a></li>
+          <li><a href="#integrations">Data &amp; interfaces</a></li>
+          <li><a href="#security">Trust &amp; security</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Get started</h4>
+        <ul>
+          <li><a href="https://app.woundeye.com/">Sign in</a></li>
+          <li><a href="mailto:access@woundeye.com">access@woundeye.com</a></li>
+          <li><a href="https://www.wounds-ai.com">Wound Solutions AI</a></li>
+        </ul>
+      </div>
+    </div>
+    <p class="foot-legal">WoundEye is a wellness product. It does not diagnose, treat, cure or prevent any disease, and it is not a substitute for professional medical advice. Always consult a qualified clinician about a wound.</p>
+    <p class="foot-legal">© <span id="year">2026</span> Wound Solutions AI. Site concept by Simon Lee &amp; Associates LLC.</p>
+  </div>
+</footer>
+
+<script src="/js/main.js"></script>
 </body>
 </html>
