@@ -481,3 +481,130 @@ sup.fn a:hover { text-decoration: underline; }
 .card-flow li:nth-child(2) span { animation-delay: 5.3s; }
 .card-flow li:nth-child(3) span { animation-delay: 7.3s; }
 .card-flow li:nth-child(4) span { animation-delay: 9.3s; }
+
+/* ---------- Workflow animation (shared with wounds-ai.com) ---------- */
+/* ---------- Platform flow visual ---------- */
+.flow { background: var(--ink); color: #E9E1D0; border: 1px solid #0F1522; }
+.flow-bar { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: .75rem 1.5rem; padding: 1rem 1.25rem; border-bottom: 1px solid #2E3A52; font-family: var(--sans); }
+.flow-steps, .flow-modes { display: flex; flex-wrap: wrap; gap: .35rem; }
+.flow button { font: 700 .9rem var(--sans); color: #E9E1D0; background: transparent; border: 1px solid #3A4762; border-radius: 3px; padding: .5rem .8rem; cursor: pointer; min-height: 40px; }
+.flow button:hover { border-color: var(--sand); }
+.flow button[aria-pressed="true"] { background: var(--sand); color: var(--ink); border-color: var(--sand); }
+.flow button:focus-visible { outline: 2px solid #C9A45C; outline-offset: 2px; }
+.flow-body { display: block; }
+.flow-stage { position: relative; min-width: 0; }
+.flow-stage svg { width: 100%; height: auto; display: block; }
+.flow-side { border-top: 1px solid #2E3A52; padding: 1.4rem 1.5rem; display: grid; grid-template-columns: minmax(0, 1.5fr) minmax(0, 1.1fr) minmax(0, .8fr); gap: 2rem; align-items: start; }
+.flow-panel .panel-title { font-family: var(--serif); font-size: 1.5rem; line-height: 1.2; color: var(--paper); margin: 0 0 .6rem; }
+.flow-panel .panel-body { font-family: var(--serif); font-size: 1.02rem; line-height: 1.55; color: #CFC7B6; margin: 0; min-height: 8em; max-width: 36rem; }
+.flow-counts { display: grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap: .9rem 1rem; font-family: var(--sans); }
+.flow-counts div { font-size: .8rem; color: #A9A293; line-height: 1.3; }
+.flow-counts b { display: block; font-family: var(--serif); font-weight: 400; font-size: 1.6rem; color: var(--paper); font-variant-numeric: tabular-nums lining-nums; }
+.flow-counts .flag b { color: #E08A74; }
+.flow-rate { font-family: var(--sans); font-size: .85rem; color: #CFC7B6; }
+.flow-rate input { width: 100%; accent-color: #C9A45C; margin-top: .4rem; }
+.flow-rate .row { display: flex; justify-content: space-between; gap: .5rem; }
+.flow-legend { display: flex; flex-wrap: wrap; gap: .5rem 1.25rem; padding: .9rem 1.25rem; border-top: 1px solid #2E3A52; font: .82rem/1.4 var(--sans); color: #A9A293; }
+.flow-legend span { display: inline-flex; align-items: center; gap: .45rem; }
+.flow-legend i { width: 11px; height: 11px; border-radius: 50%; display: inline-block; }
+.flow-legend .l-raw { border: 1.5px solid #ECE3D1; }
+.flow-legend .l-read { background: #C9A45C; }
+.flow-legend .l-ok { background: #F7F2E8; box-shadow: 0 0 0 2px #1B2433, 0 0 0 3.5px #F7F2E8; }
+.flow-legend .l-flag { background: #E08A74; }
+.flow-foot { margin-left: auto; }
+@media (max-width: 1080px) { .flow-side { grid-template-columns: 1fr 1fr; } .flow-panel { grid-column: 1 / -1; } .flow-panel .panel-body { min-height: 0; } }
+@media (max-width: 620px) { .flow-side { grid-template-columns: 1fr; gap: 1.25rem; } .flow-counts { grid-template-columns: repeat(2, minmax(0,1fr)); } .flow-foot { margin-left: 0; } .flow-bar { padding: .75rem; } .flow button { padding: .45rem .6rem; font-size: .85rem; } }
+.flow-wide { max-width: 84rem; }
+/* SVG parts */
+.flow-caps text { font: 700 13px var(--sans); fill: #8C8778; letter-spacing: .02em; }
+.flow .edge { fill: none; stroke: #33405C; stroke-width: 1.5; transition: opacity .3s; }
+.flow .edge-flow { fill: none; stroke: #C9A45C; stroke-width: 1.6; stroke-dasharray: 3 9; opacity: .75; animation: flowdash 1.1s linear infinite; transition: opacity .3s; }
+.flow .edge.loop { stroke-dasharray: 2 5; }
+.flow .edge-flow.loop { stroke: #E08A74; opacity: .5; }
+.flow.paused .edge-flow { animation-play-state: paused; }
+@keyframes flowdash { to { stroke-dashoffset: -24; } }
+.flow .dim { opacity: .18; }
+.flow .edge-flow.dim { opacity: .05; }
+.flow .off { opacity: .04 !important; }
+.flow .loop-label { font: italic 600 15px var(--serif); fill: #F2A28C; }
+.flow .is-v .loop-label { font-size: 13.5px; }
+.flow .node { cursor: pointer; transition: opacity .3s; outline: none; }
+.flow .node .shape { fill: #1F2A3E; stroke: #6C7893; stroke-width: 1.2; transition: stroke .2s, fill .2s; }
+.flow .node:hover .shape, .flow .node:focus-visible .shape, .flow .node.focus .shape { stroke: #C9A45C; stroke-width: 2; }
+.flow .node-prod .shape { fill: #F7F2E8; stroke: #F7F2E8; }
+.flow .node-prod text { fill: #1B2433; }
+.flow .node-prod.focus .shape, .flow .node-prod:hover .shape { stroke: #C9A45C; stroke-width: 3; }
+.flow .node-out .shape { fill: #1F2A3E; stroke: #8C97AE; }
+.flow .node-core .shape { fill: #C9A45C; stroke: #E6CC93; stroke-width: 1.5; }
+.flow .node-core text { fill: #1B2433; }
+.flow .core-ring { fill: none; stroke: #C9A45C; stroke-width: 1; opacity: .5; }
+.flow .core-pulse { fill: none; stroke: #C9A45C; stroke-width: 1.5; transform-box: fill-box; transform-origin: center; animation: corepulse 2.6s ease-out infinite; }
+.flow.paused .core-pulse { animation-play-state: paused; }
+@keyframes corepulse { 0% { transform: scale(.92); opacity: .6; } 100% { transform: scale(1.35); opacity: 0; } }
+.flow .n-label { font: 400 19px var(--serif); fill: #F7F2E8; }
+.flow .core-label { font-size: 17px; font-weight: 700; }
+.flow .node-prod .n-label { fill: #1B2433; font-weight: 700; }
+.flow .n-sub { font: 12.5px var(--sans); fill: #A9A293; }
+.flow .node-prod .n-sub { fill: #465063; }
+.flow .node-core .n-sub { fill: #2B3446; }
+.flow .n-src { font: 14px var(--sans); fill: #E9E1D0; }
+.flow .n-out { font: 700 14px var(--sans); fill: #F7F2E8; }
+.flow .node-out .n-out { font-size: 14px; }
+.flow .node.ping .shape { animation: ping .5s ease-out; }
+@keyframes ping { 0% { stroke: #C9A45C; stroke-width: 4; } 100% { } }
+.flow .pt { transition: fill .25s; }
+.flow .pt-raw { fill: #1B2433; stroke: #ECE3D1; stroke-width: 1.6; }
+.flow .pt-read { fill: #C9A45C; stroke: #1B2433; stroke-width: 1; }
+.flow .pt-ok { fill: #F7F2E8; stroke: #1B2433; stroke-width: 1.5; }
+.flow .pt-flag { fill: #E08A74; stroke: #1B2433; stroke-width: 1; }
+@media (prefers-reduced-motion: reduce) { .flow .edge-flow, .flow .core-pulse { animation: none; } }
+.flow .is-v .core-label { font-size: 13.5px; }
+.flow .is-v .node-core .n-sub { font-size: 10.5px; }
+.flow-intro { padding-top: clamp(3rem, 5vw, 4.5rem); }
+/* Flow: result returned to patient and carer */
+.flow .edge.result { stroke: #3F6B66; stroke-width: 1.5; }
+.flow .edge-flow.result { stroke: #7FC4B8; opacity: .85; stroke-dasharray: 4 8; animation-direction: normal; }
+.flow .pt-result { fill: #7FC4B8; stroke: #1B2433; stroke-width: 1.2; }
+.flow .result-label { font: italic 13px var(--serif); fill: #9FCFC6; }
+.flow-legend .l-result { background: #7FC4B8; }
+.flow-counts .res b { color: #9FCFC6; }
+/* ---------- Home: the flow visual snaps into place under the menu ---------- */
+.flow-intro .flow { scroll-margin-top: calc(4.5rem + 1rem); }
+/* Home: every section after the flow also snaps under the menu */
+main > .hero ~ section:not(.flow-intro) { scroll-margin-top: calc(4.5rem + 1px); }
+.flow-we .flow-counts { grid-template-columns: repeat(2, minmax(0,1fr)); }
+.flow-wr .flow-counts { grid-template-columns: repeat(2, minmax(0,1fr)); }
+.flow-title { font-size: 1.5rem; font-weight: 400; margin-bottom: 1rem; }
+.flow-intro-text { color: var(--ink-2); max-width: 46rem; margin: -.4rem 0 1.1rem; }
+.flow-title.mt-3 { margin-top: 3.5rem; }
+.flow .out-group { fill: rgba(201,164,92,.04); stroke: rgba(201,164,92,.35); stroke-width: 1; stroke-dasharray: 4 5; cursor: pointer; transition: fill .2s, stroke .2s; }
+.flow .out-group:hover, .flow .out-group.active { fill: rgba(201,164,92,.10); stroke: #C9A45C; }
+.flow .out-group:focus-visible { outline: none; stroke: #F7F2E8; stroke-width: 2; }
+.flow .loop-label.is-link { cursor: pointer; text-decoration: underline; text-decoration-color: rgba(224,138,116,.5); text-underline-offset: 3px; }
+.flow .loop-label.is-link:hover, .flow .loop-label.active { fill: #F2B3A2; }
+.flow .loop-label:focus-visible { outline: none; fill: #F7F2E8; }
+.flow-clock { display: flex; align-items: center; gap: .85rem; margin-bottom: 1rem; }
+.flow-clock .clock-face { width: 64px; height: 64px; flex: none; }
+.flow-clock .cf-rim { fill: #F7F2E8; stroke: #C9A45C; stroke-width: 2.5; }
+.flow-clock .cf-tick { stroke: #8A8475; stroke-width: 1; }
+.flow-clock .cf-tick.big { stroke: #1B2433; stroke-width: 2.2; }
+.flow-clock .cf-hour { stroke: #1B2433; stroke-width: 5; stroke-linecap: round; }
+.flow-clock .cf-min { stroke: #A8823E; stroke-width: 2.6; stroke-linecap: round; }
+.flow-clock .cf-pin { fill: #1B2433; }
+.flow-clock .clock-text { display: flex; flex-direction: column; line-height: 1.25; }
+.flow-clock .clock-day { font-size: .8rem; color: #A9A293; }
+.flow-clock .clock-time { font-family: var(--serif); font-weight: 400; font-size: 1.45rem; color: #F7F2E8; font-variant-numeric: tabular-nums; }
+.flow-clock .clock-note { font-size: .75rem; color: #A9A293; }
+.flow .node-late .shape { fill: rgba(224,138,116,.07); stroke: #B9705F; stroke-dasharray: 5 4; }
+.flow .node-late .n-label { fill: #F2C9BC; font-size: 17px; }
+.flow .node-late .n-sub { fill: #C7A49A; }
+.flow .lane-label { font: italic 600 15px var(--serif); transition: opacity .3s; }
+.flow .lane-label.lane-late { fill: #F2A28C; }
+.flow .lane-label.lane-early { fill: #8FD3C6; }
+.flow .lane-label.dim { opacity: .2; }
+.flow .is-v .lane-label { font-size: 13px; }
+.flow .pt-wait { fill: #6E5A4F; stroke: #E08A74; stroke-width: 1.4; }
+.flow-legend .l-wait { background: #6E5A4F; box-shadow: 0 0 0 1.5px #E08A74; }
+.flow-ma .flow-counts { grid-template-columns: repeat(2, minmax(0,1fr)); }
+.section.ink-soft { background: var(--sand); }
+.flow-wide { max-width: 84rem; }
