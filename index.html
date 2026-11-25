@@ -43,9 +43,9 @@
 <main id="main">
 
   <!-- Hero -->
-  <section class="hero photo-hero">
+  <section class="hero photo-hero hero-v2">
     <img class="hero-img" src="/images/photo-hero-carer.webp" alt="" width="1800" height="1200">
-    <div class="wrap">
+    <div class="wrap hero-v2-grid">
       <div class="hero-copy">
         <p class="hero-logo" aria-label="WoundEye"><span>Wound<em>Eye</em></span></p>
         <p class="kicker">Same-day human decision support</p>
@@ -55,11 +55,47 @@
           <a class="btn btn-light" href="mailto:access@woundeye.com">Request access</a>
           <a class="btn btn-ghost" href="#how">See how it works</a>
         </div>
+        <div class="built-for">
+          <p>Built for</p>
+          <ul>
+            <li><a href="#how">Patients &amp; caregivers</a></li>
+            <li><a href="#clinicians">Clinicians</a></li>
+            <li><a href="#markets">Employers &amp; health plans</a></li>
+          </ul>
+        </div>
         <ul class="hero-tags">
           <li>Every wound assessed by a clinician</li>
           <li>FHIR R4 export</li>
           <li>iOS · Android · Web</li>
         </ul>
+      </div>
+
+      <div class="hero-stage" aria-label="The WoundEye app: photo capture, body-map pin and clinician-reviewed guidance">
+        <div class="phone stage-back"><img src="/images/screen-carer-home.jpg" alt="Carer home screen with a button to add a wound photo" width="562" height="1218"></div>
+        <div class="phone stage-front"><img src="/images/screen-assessment-summary.jpg" alt="Assessment summary reviewed and confirmed by the care team, with print, email and consultation buttons" width="562" height="1218"></div>
+
+        <div class="float-card card-map">
+          <img src="/images/map-heel-sole.jpg" alt="" width="314" height="626">
+          <div>
+            <span class="fc-label">Wound site</span>
+            <span class="fc-pill">Selected: Lt Heel</span>
+          </div>
+        </div>
+
+        <div class="float-card card-review">
+          <span class="fc-check" aria-hidden="true">✓</span>
+          <div>
+            <strong>Reviewed by a clinician</strong>
+            <span>Guidance returned the same day</span>
+          </div>
+        </div>
+
+        <ol class="float-card card-flow" aria-label="How it works">
+          <li><span>1</span>Photo</li>
+          <li><span>2</span>Pin site</li>
+          <li><span>3</span>Review</li>
+          <li><span>4</span>Guidance</li>
+        </ol>
       </div>
     </div>
   </section>
