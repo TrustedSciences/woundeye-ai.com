@@ -4,13 +4,13 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>WoundEye — Timely Human Wound Care Advice</title>
-  <meta name="description" content="Capture, assess and track wound healing — with expert clinical review returned to your phone the same day. iOS, Android and web.">
+  <meta name="description" content="Capture, assess and track wound healing on any phone — with a clinician's review returned the same day. iOS, Android and web.">
   <meta name="theme-color" content="#ECE3D1">
   <link rel="canonical" href="https://www.woundeye-ai.com/">
   <link rel="icon" href="/images/logo.png" type="image/png">
   <meta property="og:title" content="WoundEye — Timely Human Wound Care Advice">
   <meta property="og:description" content="Same-day human wound care decision support, on any phone.">
-  <meta property="og:image" content="https://www.woundeye-ai.com/images/screen-carer-home.jpg">
+  <meta property="og:image" content="https://www.woundeye-ai.com/images/photo-hero-carer.webp">
   <meta property="og:url" content="https://www.woundeye-ai.com/">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -29,11 +29,11 @@
     <button class="nav-toggle" aria-expanded="false" aria-controls="site-nav">Menu</button>
     <nav class="nav" id="site-nav" aria-label="Main">
       <a href="#why">Why it matters</a>
+      <a href="#how">How it works</a>
       <a href="#platform">Platform</a>
-      <a href="#bodymap">Body map</a>
       <a href="#markets">Who it's for</a>
-      <a href="#integrations">Data &amp; interfaces</a>
-      <a href="#security">Trust &amp; security</a>
+      <a href="#security">Trust</a>
+      <a href="#faq">FAQ</a>
       <a href="#about">About</a>
       <a class="btn-ink" href="https://app.woundeye.com/">Sign in</a>
     </nav>
@@ -43,26 +43,23 @@
 <main id="main">
 
   <!-- Hero -->
-  <section class="hero">
-    <div class="wrap hero-grid">
-      <div>
+  <section class="hero photo-hero">
+    <img class="hero-img" src="/images/photo-hero-carer.webp" alt="" width="1800" height="1200">
+    <div class="wrap">
+      <div class="hero-copy">
         <p class="kicker">Same-day human decision support</p>
         <h1>Take control of your wound care</h1>
-        <p class="hero-sub">The comprehensive platform for capturing, assessing, and tracking wound healing — with expert clinical review returned to your phone the same day.</p>
+        <p class="hero-sub">Photograph a wound at home. A qualified clinician reviews it and sends structured, plain-language guidance back to your phone — the same day.</p>
         <div class="btn-row">
           <a class="btn btn-light" href="mailto:access@woundeye.com">Request access</a>
-          <a class="btn btn-ghost" href="#platform">Explore the platform</a>
+          <a class="btn btn-ghost" href="#how">See how it works</a>
         </div>
         <ul class="hero-tags">
           <li>Every wound assessed by a clinician</li>
-          <li>FHIR R4</li>
-          <li>Honest compliance posture</li>
+          <li>English · Arabic · Spanish</li>
+          <li>FHIR R4 export</li>
           <li>iOS · Android · Web</li>
         </ul>
-      </div>
-      <div class="hero-phones" aria-hidden="true">
-        <div class="phone"><img src="/images/screen-carer-home.jpg" alt="" width="562" height="1218"></div>
-        <div class="phone"><img src="/images/screen-assessment-summary.jpg" alt="" width="562" height="1218"></div>
       </div>
     </div>
   </section>
@@ -71,15 +68,15 @@
   <section class="stats-band" aria-label="The scale of the problem">
     <div class="wrap">
       <div class="stats">
-        <div class="stat"><div class="v">10.5M</div><p>Medicare beneficiaries living with chronic wounds</p></div>
-        <div class="stat"><div class="v">$22.5B</div><p>Medicare spends on wound care every year</p></div>
-        <div class="stat"><div class="v">150,000</div><p>U.S. diabetes-related amputations each year</p></div>
-        <div class="stat"><div class="v">34%</div><p>Lifetime diabetic foot ulcer risk for people with diabetes</p></div>
+        <div class="stat"><div class="v">10.5M</div><p>Medicare beneficiaries living with a chronic wound — about one in six<sup class="fn"><a href="#ref-1">1</a></sup></p></div>
+        <div class="stat"><div class="v">$22.5B</div><p>Medicare spending on chronic wounds each year, by the most conservative estimate<sup class="fn"><a href="#ref-1">1</a></sup></p></div>
+        <div class="stat"><div class="v">~130,000</div><p>Americans with diabetes who undergo an amputation each year<sup class="fn"><a href="#ref-2">2</a></sup></p></div>
+        <div class="stat"><div class="v">Up to 34%</div><p>Lifetime risk of a foot ulcer for a person with diabetes<sup class="fn"><a href="#ref-3">3</a></sup></p></div>
       </div>
     </div>
   </section>
 
-  <!-- Why -->
+  <!-- Why: progression -->
   <section class="section" id="why">
     <div class="wrap">
       <div class="section-head">
@@ -87,22 +84,122 @@
           <p class="kicker">The burden</p>
           <h2>Why wound care can't wait</h2>
         </div>
-        <p class="lede">Chronic wounds develop silently and escalate fast. A small ulcer noticed late can become a $50,000+ episode — or an amputation. Early capture, honest measurement, and consistent tracking change that trajectory.</p>
+        <p class="lede">Chronic wounds develop silently and escalate fast. A small foot ulcer noticed late can become an infection, a hospital stay — or an amputation. Each step is costlier and harder to reverse than the one before.</p>
       </div>
-      <dl class="pillars">
-        <div>
-          <dt>The silent progression</dt>
-          <dd>Diabetes → reduced sensation → unnoticed foot ulcer → infection → amputation. Each step is more expensive and harder to reverse than the last. The window to act is at the beginning, at home, when the wound is small.</dd>
+
+      <ol class="pathway" aria-label="The silent progression from diabetes to amputation">
+        <li>
+          <span class="window">The window to act →</span>
+          <p class="stage">Stage 1</p>
+          <h3>Diabetes</h3>
+          <p>Up to a third of people with diabetes will develop a foot ulcer in their lifetime.<sup class="fn"><a href="#ref-3">3</a></sup></p>
+        </li>
+        <li>
+          <p class="stage">Stage 2</p>
+          <h3>Reduced sensation</h3>
+          <p>At least half of adults with diabetes develop peripheral neuropathy, which raises ulcer risk roughly sevenfold.<sup class="fn"><a href="#ref-5">5</a></sup></p>
+        </li>
+        <li>
+          <p class="stage">Stage 3</p>
+          <h3>An unnoticed ulcer</h3>
+          <p>About 1.6 million people in the U.S. are affected by a diabetic foot ulcer each year.<sup class="fn"><a href="#ref-6">6</a></sup></p>
+        </li>
+        <li>
+          <p class="stage">Stage 4</p>
+          <h3>Infection</h3>
+          <p>More than half of diabetic foot ulcers become infected.<sup class="fn"><a href="#ref-4">4</a></sup></p>
+        </li>
+        <li>
+          <p class="stage">Stage 5</p>
+          <h3>Amputation</h3>
+          <p>About 17% of people with a diabetic foot ulcer will need an amputation<sup class="fn"><a href="#ref-4">4</a></sup> — and ulcers precede 80% of diabetes-related amputations.<sup class="fn"><a href="#ref-6">6</a></sup></p>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- Mortality comparison -->
+  <section class="section paper" id="mortality">
+    <div class="wrap two-col">
+      <div>
+        <p class="kicker">As serious as cancer</p>
+        <h2>A foot ulcer is not a minor problem</h2>
+        <p class="lede mt-1">A pooled analysis of studies published since 2007 found that five-year mortality after a diabetic foot ulcer matches the average across all cancers — and is higher still after amputation.<sup class="fn"><a href="#ref-4">4</a></sup></p>
+        <div class="finding mt-2">
+          <div class="figure-num">56.6%</div>
+          <div>
+            <p>of people die within five years of a major amputation.<sup class="fn"><a href="#ref-4">4</a></sup></p>
+            <p class="small">Prevention, early detection and consistent follow-up are where outcomes are decided.</p>
+          </div>
         </div>
+      </div>
+      <figure class="chart" aria-labelledby="chart-cap">
+        <p class="chart-title" id="chart-cap">Five-year mortality, %</p>
+        <ul class="bars">
+          <li><span class="label">Breast cancer</span><span class="track"><span class="fill" style="width:9%"></span></span><span class="val">9.0</span></li>
+          <li class="foot"><span class="label">Charcot foot</span><span class="track"><span class="fill" style="width:29%"></span></span><span class="val">29.0</span></li>
+          <li class="foot"><span class="label">Diabetic foot ulcer</span><span class="track"><span class="fill" style="width:30.5%"></span></span><span class="val">30.5</span></li>
+          <li><span class="label">All cancers (pooled)</span><span class="track"><span class="fill" style="width:31%"></span></span><span class="val">31.0</span></li>
+          <li class="foot"><span class="label">Minor amputation</span><span class="track"><span class="fill" style="width:46.2%"></span></span><span class="val">46.2</span></li>
+          <li class="foot"><span class="label">Major amputation</span><span class="track"><span class="fill" style="width:56.6%"></span></span><span class="val">56.6</span></li>
+          <li><span class="label">Lung cancer</span><span class="track"><span class="fill" style="width:80%"></span></span><span class="val">80.0</span></li>
+        </ul>
+        <div class="chart-key"><span><i style="background:var(--ink)"></i>Diabetic foot complications</span><span><i style="background:var(--rule)"></i>Cancer</span></div>
+        <figcaption class="source-note">Source: Armstrong et al., <i>J Foot Ankle Res</i> 2020.<sup class="fn"><a href="#ref-4">4</a></sup></figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <!-- Recurrence -->
+  <section class="section ink" id="recurrence">
+    <div class="wrap">
+      <div class="section-head">
         <div>
-          <dt>The cost of waiting</dt>
-          <dd>A single manual wound assessment takes a clinician 20–30 minutes and costs $50–$75. One advanced ulcer episode exceeds $50,000, and a Stage 4 pressure ulcer costs $19,000 — much of it avoidable with early, consistent monitoring.</dd>
+          <p class="kicker">Healed is not the end</p>
+          <h2>Ulcers come back. Tracking has to continue.</h2>
         </div>
+        <p class="lede">Clinicians describe a healed diabetic foot ulcer as being in <em>remission</em>: the greatest risk factor for a new ulcer is a previous one. That is why WoundEye keeps the photo timeline, the body-map site and the record going long after the wound closes.</p>
+      </div>
+      <div class="recur">
+        <div><div class="v">40%</div><p>recur within one year of healing<sup class="fn"><a href="#ref-4">4</a></sup></p></div>
+        <div><div class="v">65%</div><p>recur within five years<sup class="fn"><a href="#ref-4">4</a></sup></p></div>
+        <div><div class="v">90%+</div><p>recur within ten years<sup class="fn"><a href="#ref-4">4</a></sup></p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- How it works -->
+  <section class="section" id="how">
+    <div class="wrap">
+      <div class="section-head">
         <div>
-          <dt>Prevention over reaction</dt>
-          <dd>WoundEye brings assessment to the wound instead of the wound to the clinic: photograph it at home, get immediate care guidance in seconds, share the record with your care team or our third-party care team before small problems become large ones.</dd>
+          <p class="kicker">How it works</p>
+          <h2>From a phone photo to a clinician's answer</h2>
         </div>
-      </dl>
+        <p class="lede">WoundEye brings the assessment to the wound instead of the wound to the clinic. No kit, no appointment — just the phone you already have.</p>
+      </div>
+      <ol class="how">
+        <li>
+          <div class="phone"><img src="/images/screen-carer-home.jpg" alt="Carer home screen with a button to add a patient wound photo" width="562" height="1218" loading="lazy"></div>
+          <h3>Capture</h3>
+          <p>Guided photo capture at 15–30 cm, with pain score and context in plain language. Carers can manage several family members, kept separate.</p>
+        </li>
+        <li>
+          <div class="phone"><img src="/images/screen-photo-history.jpg" alt="Photo history for a wound on the left little toe with patient-reported size" width="562" height="1218" loading="lazy"></div>
+          <h3>Locate &amp; log</h3>
+          <p>Pin the exact site on the body map. Each photo joins the wound's timeline with a patient-reported size — “~1.8 cm, about dime-sized.”</p>
+        </li>
+        <li>
+          <div class="phone"><img src="/images/screen-clinical-assessment.jpg" alt="Structured clinical assessment marked as clinician-reviewed" width="562" height="1218" loading="lazy"></div>
+          <h3>Clinician review</h3>
+          <p>The photo goes securely to your own care team or ours. A qualified reviewer completes a structured assessment, on the record.</p>
+        </li>
+        <li>
+          <div class="phone"><img src="/images/screen-assessment-summary.jpg" alt="Plain-language assessment summary with buttons to print, email the doctor or request a consultation" width="562" height="1218" loading="lazy"></div>
+          <h3>Guidance &amp; escalation</h3>
+          <p>A plain-language summary arrives the same day, with care recommendations and one-tap escalation to your doctor.</p>
+        </li>
+      </ol>
     </div>
   </section>
 
@@ -112,9 +209,9 @@
       <div class="section-head">
         <div>
           <p class="kicker">The platform</p>
-          <h2>A complete wound care platform</h2>
+          <h2>Five modules, one wound record</h2>
         </div>
-        <p class="lede">Five modules designed to help patients, caregivers and clinicians capture, understand and track wound healing.</p>
+        <p class="lede">Designed to help patients, caregivers and clinicians capture, understand and track wound healing — together.</p>
       </div>
       <ol class="modules">
         <li>
@@ -133,7 +230,7 @@
           <ul>
             <li>Structured results in seconds</li>
             <li>Securely forward the picture to your care team or ours</li>
-            <li>Receive a structured assessment and advice in the app on your phone</li>
+            <li>Receive a structured assessment and advice in the app</li>
           </ul>
         </li>
         <li>
@@ -170,62 +267,13 @@
     </div>
   </section>
 
-  <!-- See it working -->
-  <section class="section" id="screens">
-    <div class="wrap">
-      <div class="section-head">
-        <div>
-          <p class="kicker">See it working</p>
-          <h2>Real screens from the live app</h2>
-        </div>
-        <p class="lede">Taken from the production app at <a href="https://woundtracker.app">woundtracker.app</a>.</p>
-      </div>
-
-      <div class="screens-group">
-        <h3>For clinicians</h3>
-        <div class="screens">
-          <figure>
-            <div class="phone"><img src="/images/screen-clinician-dashboard.jpg" alt="Clinician dashboard showing organization, facilities and patients" width="562" height="1218" loading="lazy"></div>
-            <figcaption><b>Dashboard</b> — organizations, facilities and caseload at a glance</figcaption>
-          </figure>
-          <figure>
-            <div class="phone"><img src="/images/screen-my-patients.jpg" alt="My Patients list with patient names and IDs" width="562" height="1218" loading="lazy"></div>
-            <figcaption><b>My Patients</b> — the clinician's caseload in one list</figcaption>
-          </figure>
-          <figure>
-            <div class="phone"><img src="/images/screen-clinical-assessment.jpg" alt="Clinical assessment record marked clinician-reviewed" width="562" height="1218" loading="lazy"></div>
-            <figcaption><b>Structured clinical assessment</b> — completed by a reviewing clinician, on the record</figcaption>
-          </figure>
-        </div>
-      </div>
-
-      <div class="screens-group">
-        <h3>For patients &amp; caregivers</h3>
-        <div class="screens">
-          <figure>
-            <div class="phone"><img src="/images/screen-carer-home.jpg" alt="Carer home screen with option to add a wound photo" width="562" height="1218" loading="lazy"></div>
-            <figcaption><b>Carer home</b> — every family member you care for, kept safely separate</figcaption>
-          </figure>
-          <figure>
-            <div class="phone"><img src="/images/screen-photo-history.jpg" alt="Wound photo history with patient-reported size" width="562" height="1218" loading="lazy"></div>
-            <figcaption><b>Photo history</b> with patient-reported size — “~1.8 cm, about dime-sized”</figcaption>
-          </figure>
-          <figure>
-            <div class="phone"><img src="/images/screen-assessment-summary.jpg" alt="Plain-language assessment summary with buttons to email or consult the doctor" width="562" height="1218" loading="lazy"></div>
-            <figcaption><b>Plain-language assessment summary</b> with one-tap escalation to the doctor</figcaption>
-          </figure>
-        </div>
-      </div>
-    </div>
-  </section>
-
   <!-- Body map -->
-  <section class="section paper" id="bodymap">
+  <section class="section" id="bodymap">
     <div class="wrap split">
       <div>
         <p class="kicker">Interactive body map</p>
         <h2>Pin the exact site, visit after visit</h2>
-        <p class="lede mt-1">A body-map experience designed with medical illustrators. Tap the wound's location, zoom into the region, and the precise site is stored with every record.</p>
+        <p class="lede mt-1">Designed with medical illustrators. Tap the wound's location, zoom into the region, and the precise site is stored with every record — so a recurrence on the same spot is never mistaken for a new wound.</p>
         <ul class="checklist">
           <li>Body-map location tagging with precise wound-site pinning</li>
           <li>Region zoom for pinpoint placement</li>
@@ -233,16 +281,41 @@
           <li>New 3D-rendered body figures arriving with V3</li>
         </ul>
       </div>
-      <div class="plates">
-        <figure class="plate">
-          <img src="/images/screen-body-map.jpg" alt="Illustrated body figure with the right arm region highlighted" width="420" height="839" loading="lazy">
-          <figcaption>Body-map location tagging</figcaption>
+      <figure class="plate solo">
+        <img src="/images/screen-3d-body.jpg" alt="3D-rendered body figure used for wound-site pinning" width="420" height="840" loading="lazy">
+        <figcaption>3D-rendered body figure — arriving with V3</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <!-- For clinicians -->
+  <section class="section paper" id="clinicians">
+    <div class="wrap">
+      <div class="split-photo">
+        <figure class="photo">
+          <img src="/images/photo-hero-clinicians.webp" alt="Clinicians reviewing wound documentation on a tablet" width="1400" height="841" loading="lazy">
         </figure>
-        <figure class="plate">
-          <img src="/images/screen-3d-body.jpg" alt="3D-rendered body figure" width="420" height="840" loading="lazy">
-          <figcaption>3D-rendered figures — arriving with V3</figcaption>
+        <div>
+          <p class="kicker">For clinicians</p>
+          <h2>A caseload view built for review, not data entry</h2>
+          <p class="lede mt-1">Organizations, facilities and patients in one place. Each assessment is structured, signed off and kept on the record with full provenance.</p>
+        </div>
+      </div>
+      <div class="screens mt-2">
+        <figure>
+          <div class="phone"><img src="/images/screen-clinician-dashboard.jpg" alt="Clinician dashboard showing organization, facilities and patients" width="562" height="1218" loading="lazy"></div>
+          <figcaption><b>Dashboard</b> — organizations, facilities and caseload at a glance</figcaption>
+        </figure>
+        <figure>
+          <div class="phone"><img src="/images/screen-my-patients.jpg" alt="My Patients list with patient names and IDs" width="562" height="1218" loading="lazy"></div>
+          <figcaption><b>My Patients</b> — the clinician's caseload in one list</figcaption>
+        </figure>
+        <figure>
+          <div class="phone"><img src="/images/screen-clinical-assessment.jpg" alt="Clinical assessment record marked clinician-reviewed" width="562" height="1218" loading="lazy"></div>
+          <figcaption><b>Structured assessment</b> — completed by a reviewing clinician, with full provenance</figcaption>
         </figure>
       </div>
+      <p class="source-note">Real screens from the live app at <a href="https://woundtracker.app">woundtracker.app</a>.</p>
     </div>
   </section>
 
@@ -254,6 +327,7 @@
           <p class="kicker">Who it's for</p>
           <h2>Built for the people who carry the cost of wounds</h2>
         </div>
+        <p class="lede">Diabetic foot ulcers alone add an estimated $9–13 billion a year to U.S. health spending, on top of the cost of diabetes itself.<sup class="fn"><a href="#ref-7">7</a></sup></p>
       </div>
       <div class="roles">
         <div class="role">
@@ -270,21 +344,21 @@
         <div class="role">
           <p class="who">B2B</p>
           <h3>Self-insured employers</h3>
-          <p>67% of U.S. workers are in self-insured plans — and frontline workforces carry the highest diabetic foot ulcer risk.</p>
+          <p>67% of covered U.S. workers are in self-funded plans<sup class="fn"><a href="#ref-8">8</a></sup> — and frontline workforces carry the highest diabetic foot ulcer risk.</p>
           <ul>
             <li>Mobile wound checks reach workers who can't take clinic time</li>
             <li>DFU carve-out fits existing chronic-care programs</li>
-            <li>One avoided amputation saves ~$53,800 inpatient cost</li>
+            <li>A diabetic foot ulcer adds about $16,900 a year in costs for a privately insured patient<sup class="fn"><a href="#ref-7">7</a></sup></li>
             <li>Deploys alongside diabetes and MSK benefits</li>
           </ul>
         </div>
         <div class="role">
           <p class="who">MA</p>
           <h3>Medicare Advantage plans</h3>
-          <p>35.3M beneficiaries. Chronic-condition plans are the fastest-growing MA segment — and skin integrity is a quality measure.</p>
+          <p>About 35 million people — more than half of eligible beneficiaries — are now in Medicare Advantage.<sup class="fn"><a href="#ref-9">9</a></sup> Skin integrity is a quality measure.</p>
           <ul>
-            <li>Digital wound platforms already proven in MA: 35% faster healing, 18% visit efficiency</li>
-            <li>A $19K Stage 4 ulcer avoided writes its own ROI case</li>
+            <li>A diabetic foot ulcer adds about $11,700 a year in Medicare costs per patient<sup class="fn"><a href="#ref-7">7</a></sup></li>
+            <li>Each serious hospital-acquired pressure injury costs about $43,000 on average<sup class="fn"><a href="#ref-10">10</a></sup></li>
             <li>Member-app engagement channel included</li>
             <li>PMPM pricing scaled to plan size</li>
           </ul>
@@ -296,12 +370,15 @@
   <!-- Integrations -->
   <section class="section paper" id="integrations">
     <div class="wrap">
-      <div class="section-head">
+      <div class="split-photo flip">
+        <figure class="photo">
+          <img src="/images/photo-tablet-touch.webp" alt="A hand touching a tablet screen lit in blue" width="560" height="651" loading="lazy" style="max-height:24rem;object-fit:cover">
+        </figure>
         <div>
           <p class="kicker">Integrations</p>
           <h2>Data interfaces &amp; EHR readiness</h2>
+          <p class="lede mt-1">Enterprise-grade foundations, ready to connect to clinical workflows — so a wound photo taken at a kitchen table can land in the chart.</p>
         </div>
-        <p class="lede">Enterprise-grade foundations, ready to connect to clinical workflows.</p>
       </div>
       <ul class="ruled">
         <li><h3>FHIR R4</h3><p>Structured export in FHIR R4, JSON and CSV — EHR-ready by design.</p></li>
@@ -317,16 +394,20 @@
   <!-- Security -->
   <section class="section ink" id="security">
     <div class="wrap">
-      <div class="section-head">
+      <div class="split-photo">
         <div>
           <p class="kicker">Trust &amp; security</p>
           <h2>Clinician-governed, privacy-first</h2>
+          <p class="lede mt-1">Software supports the review. People make the call.</p>
         </div>
+        <figure class="photo">
+          <img src="/images/photo-bedside-care.webp" alt="A nurse caring for a patient at the bedside" width="1200" height="800" loading="lazy">
+        </figure>
       </div>
       <dl class="pillars four">
         <div>
           <dt>Clinicians govern</dt>
-          <dd>Clinicians make every call. Each assessment is completed by a qualified reviewer, and any change is recorded with rationale, on the record.</dd>
+          <dd>Each assessment is completed by a qualified reviewer, and any change is recorded with rationale, on the record.</dd>
         </div>
         <div>
           <dt>Honest compliance posture</dt>
@@ -357,8 +438,46 @@
     </div>
   </section>
 
+  <!-- FAQ -->
+  <section class="section paper" id="faq">
+    <div class="wrap">
+      <p class="kicker">Questions</p>
+      <h2>Frequently asked</h2>
+      <div class="faq">
+        <details>
+          <summary>Who actually looks at my wound?</summary>
+          <p>A qualified clinician — either your own care team, if you choose to share with them, or WoundEye's third-party care team. Every assessment is completed and signed off by a person, and any change is logged with a reason and a timestamp.</p>
+        </details>
+        <details>
+          <summary>How quickly will I hear back?</summary>
+          <p>Immediate care guidance appears in seconds, and the clinician's structured assessment is returned to your phone the same day.</p>
+        </details>
+        <details>
+          <summary>Does WoundEye diagnose or treat wounds?</summary>
+          <p>No. WoundEye is a wellness product. It does not diagnose, treat, cure or prevent any disease and is not a substitute for professional medical advice. If a wound is getting worse, spreading, hot, smelly or painful, or you have a fever, contact your doctor or seek urgent care.</p>
+        </details>
+        <details>
+          <summary>Do I need special equipment?</summary>
+          <p>No kit is required. WoundEye works on any iPhone, Android phone or web browser, and guides you to take the photo from 15–30 cm away.</p>
+        </details>
+        <details>
+          <summary>Can I manage wounds for a family member?</summary>
+          <p>Yes. The Caregiver plan gives multi-patient and family access, with each person's records kept safely separate.</p>
+        </details>
+        <details>
+          <summary>What happens to my photos and data?</summary>
+          <p>Your records are yours: exportable and deletable at any time. WoundEye shows no advertising and never sells your data.</p>
+        </details>
+        <details>
+          <summary>What languages are supported?</summary>
+          <p>English, Arabic and Spanish at launch.</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
   <!-- About -->
-  <section class="section paper" id="about">
+  <section class="section" id="about">
     <div class="wrap section-head">
       <div>
         <p class="kicker">About</p>
@@ -382,6 +501,26 @@
     </div>
   </section>
 
+  <!-- References -->
+  <section class="section paper" id="references">
+    <div class="wrap">
+      <p class="kicker">Sources</p>
+      <h2>References</h2>
+      <ol class="references">
+        <li id="ref-1">Carter MJ, DaVanzo J, Haught R, et al. Chronic wound prevalence and the associated cost of treatment in Medicare beneficiaries: changes between 2014 and 2019. <i>J Med Econ.</i> 2023;26(1):894–901. <a href="https://doi.org/10.1080/13696998.2023.2232256">doi:10.1080/13696998.2023.2232256</a></li>
+        <li id="ref-2">National Institute of Diabetes and Digestive and Kidney Diseases. Reducing disparities in diabetic amputations. <i>Diabetes Discoveries &amp; Practice</i>, 2021. <a href="https://www.niddk.nih.gov/health-information/professionals/diabetes-discoveries-practice/reducing-disparities-in-diabetic-amputations">niddk.nih.gov</a></li>
+        <li id="ref-3">Armstrong DG, Boulton AJM, Bus SA. Diabetic foot ulcers and their recurrence. <i>N Engl J Med.</i> 2017;376:2367–75. <a href="https://doi.org/10.1056/NEJMra1615439">doi:10.1056/NEJMra1615439</a></li>
+        <li id="ref-4">Armstrong DG, Swerdlow MA, Armstrong AA, Conte MS, Padula WV, Bus SA. Five year mortality and direct costs of care for people with diabetic foot complications are comparable to cancer. <i>J Foot Ankle Res.</i> 2020;13:16. <a href="https://doi.org/10.1186/s13047-020-00383-2">doi:10.1186/s13047-020-00383-2</a></li>
+        <li id="ref-5">McDermott K, Fang M, Boulton AJM, Selvin E, Hicks CW. Etiology, epidemiology, and disparities in the burden of diabetic foot ulcers. <i>Diabetes Care.</i> 2023;46(1):209–221. <a href="https://doi.org/10.2337/dci22-0043">doi:10.2337/dci22-0043</a></li>
+        <li id="ref-6">Armstrong DG, Tan TW, Boulton AJM, Bus SA. Diabetic foot ulcers: a review. <i>JAMA.</i> 2023;330(1):62–75. <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC10723802/">PMC10723802</a></li>
+        <li id="ref-7">Rice JB, Desai U, Cummings AKG, Birnbaum HG, Skornicki M, Parsons NB. Burden of diabetic foot ulcers for Medicare and private insurers. <i>Diabetes Care.</i> 2014;37(3):651–8. <a href="https://doi.org/10.2337/dc13-2176">doi:10.2337/dc13-2176</a></li>
+        <li id="ref-8">KFF. 2025 Employer Health Benefits Survey. October 2025. <a href="https://www.kff.org/health-costs/issue-brief/2025-employer-health-benefits-survey/">kff.org</a></li>
+        <li id="ref-9">KFF. Medicare Advantage in 2026: enrollment update and key trends. 2026. <a href="https://www.kff.org/medicare/fact-sheet/medicare-advantage/">kff.org</a></li>
+        <li id="ref-10">Agency for Healthcare Research and Quality. Preventing pressure ulcers in hospitals: implementation guide, Appendix F (national average cost per stage 3+ hospital-acquired pressure injury). <a href="https://www.ahrq.gov/patient-safety/settings/hospital/resource/pressureinjury/guide/apf.html">ahrq.gov</a></li>
+      </ol>
+    </div>
+  </section>
+
 </main>
 
 <footer class="site-footer">
@@ -394,10 +533,11 @@
       <div>
         <h4>WoundEye</h4>
         <ul>
+          <li><a href="#how">How it works</a></li>
           <li><a href="#platform">Platform</a></li>
           <li><a href="#markets">Who it's for</a></li>
-          <li><a href="#integrations">Data &amp; interfaces</a></li>
           <li><a href="#security">Trust &amp; security</a></li>
+          <li><a href="#references">References</a></li>
         </ul>
       </div>
       <div>
