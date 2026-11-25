@@ -690,3 +690,10 @@ main > .hero ~ section:not(.flow-intro) { scroll-margin-top: calc(4.5rem + 1px);
 @media (prefers-reduced-motion: reduce) {
   .hero-stage.js-loop .stage-back, .hero-stage.js-loop .stage-front, .hero-stage.js-loop .float-card { opacity: 1; transform: none; transition: none; }
 }
+
+/* AssureStage photo row (aligned with the four steps) */
+.as-photos { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 1.25rem; margin-top: 2rem; }
+.as-photos figure { margin: 0; }
+.as-photos img { width: 100%; aspect-ratio: 3 / 2; object-fit: cover; border: 1px solid var(--rule); filter: saturate(.85) sepia(.05); display: block; }
+@media (max-width: 960px) { .as-photos { grid-template-columns: 1fr 1fr; } }
+.as-photos img { height: auto; }
