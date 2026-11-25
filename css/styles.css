@@ -608,3 +608,28 @@ main > .hero ~ section:not(.flow-intro) { scroll-margin-top: calc(4.5rem + 1px);
 .flow-ma .flow-counts { grid-template-columns: repeat(2, minmax(0,1fr)); }
 .section.ink-soft { background: var(--sand); }
 .flow-wide { max-width: 84rem; }
+
+/* ---------- AssureStage section ---------- */
+.as-logo { height: 3rem; width: auto; margin-bottom: 1.25rem; background: #fff; padding: .4rem .6rem; border: 1px solid var(--rule); border-radius: 6px; }
+.as-steps { list-style: none; margin: 2.5rem 0 0; padding: 0; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); border-top: 1px solid var(--ink); counter-reset: as; }
+.as-steps li { counter-increment: as; padding: 1.4rem 1.25rem 0 0; }
+.as-steps li + li { padding-left: 1.25rem; border-left: 1px solid var(--rule); }
+.as-steps li::before { content: counter(as, decimal-leading-zero); display: block; font: 400 1.9rem/1 var(--serif); color: var(--ink-3); margin-bottom: .7rem; }
+.as-steps h3 { font-size: 1.2rem; font-weight: 400; margin-bottom: .45rem; }
+.as-steps p { color: var(--ink-2); font-size: 1rem; margin: 0; }
+@media (max-width: 960px) { .as-steps { grid-template-columns: 1fr 1fr; } .as-steps li:nth-child(3) { padding-left: 0; border-left: 0; } .as-steps li { padding-bottom: 1.25rem; } }
+@media (max-width: 560px) { .as-steps { grid-template-columns: 1fr; } .as-steps li + li { padding-left: 0; border-left: 0; border-top: 1px solid var(--rule); } }
+
+.as-split { display: grid; grid-template-columns: 1fr 1fr; margin-top: 3rem; border: 1px solid var(--rule); }
+.as-col { padding: 1.75rem 2rem; background: var(--sand); }
+.as-col.as-human { background: var(--ink); color: #E9E1D0; }
+.as-col .who { font: 700 .8rem var(--sans); letter-spacing: .08em; text-transform: uppercase; color: var(--ink-3); margin: 0 0 .35rem; }
+.as-human .who { color: #C9A45C; }
+.as-col h3 { font-size: 1.5rem; font-weight: 400; margin-bottom: .9rem; }
+.as-human h3 { color: #F7F2E8; }
+.as-col ul { margin: 0; padding-left: 1.1rem; color: var(--ink-2); }
+.as-human ul { color: #D8D0BF; }
+.as-col li { margin-bottom: .4rem; }
+.as-note { font: italic 1rem var(--serif); margin: 1rem 0 0; padding-top: .9rem; border-top: 1px solid var(--rule); color: var(--ink-2); }
+.as-human .as-note { border-top-color: #3A4762; color: #E9E1D0; }
+@media (max-width: 760px) { .as-split { grid-template-columns: 1fr; } }
