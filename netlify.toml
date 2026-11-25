@@ -5,12 +5,7 @@
   publish = "."
   command = ""
 
-# Force the www version of the domain (set www.woundeye-ai.com as primary in Netlify too)
-[[redirects]]
-  from = "https://woundeye-ai.com/*"
-  to = "https://www.woundeye-ai.com/:splat"
-  status = 301
-  force = true
+# Domain redirects (www -> woundeye-ai.com) are handled by Netlify domain settings.
 
 # Custom 404 page
 [[redirects]]
