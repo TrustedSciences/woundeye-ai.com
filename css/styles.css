@@ -674,3 +674,19 @@ main > .hero ~ section:not(.flow-intro) { scroll-margin-top: calc(4.5rem + 1px);
 .card-map    { animation: drift-up-right .9s cubic-bezier(.2,.7,.2,1) 2.3s both; }
 .card-review { animation: drift-up-right .9s cubic-bezier(.2,.7,.2,1) 3.1s both; }
 .card-flow   { animation: drift-up-right .9s cubic-bezier(.2,.7,.2,1) 3.8s both; }
+
+/* ---------- Hero loop (JS-driven; no rotation or skew) ---------- */
+.hero-stage.js-loop .stage-back,
+.hero-stage.js-loop .stage-front,
+.hero-stage.js-loop .float-card { animation: none; opacity: 0; transition: opacity .9s ease, transform .9s cubic-bezier(.2,.7,.2,1); }
+.hero-stage.js-loop .phone { transform: translateY(28px); }
+.hero-stage.js-loop .float-card { transform: translate(-28px, 28px); }
+.hero-stage.js-loop .is-in { opacity: 1; transform: translate(0, 0); }
+.hero-stage.js-loop .phone.is-out { opacity: 0; transform: translateY(-28px); }
+.hero-stage.js-loop .float-card.is-out { opacity: 0; transform: translate(28px, -28px); }
+.hero-stage.js-loop.no-anim .stage-back,
+.hero-stage.js-loop.no-anim .stage-front,
+.hero-stage.js-loop.no-anim .float-card { transition: none; }
+@media (prefers-reduced-motion: reduce) {
+  .hero-stage.js-loop .stage-back, .hero-stage.js-loop .stage-front, .hero-stage.js-loop .float-card { opacity: 1; transform: none; transition: none; }
+}
