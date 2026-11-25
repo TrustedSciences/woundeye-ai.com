@@ -789,3 +789,69 @@ section > .source-note.wrap { margin-top: -2rem; margin-bottom: 2.5rem; display:
 .flow .node-prod .shape { fill: #F7F2E8; stroke: #F7F2E8; }
 .flow .node-prod .n-sub { fill: #465063; }
 .flow .node-late .shape { fill: rgba(224,138,116,.1); stroke: #E08A74; }
+
+/* ---------- Animations: gold background (v3) ---------- */
+.flow { --gold: #C9A45C; --nv: #0B2C63; --nv2: #24406E; --red: #8B2E24; --teal: #0E6157;
+  background: var(--gold); color: var(--nv); border-color: #A8823E; }
+.flow-bar, .flow-side, .flow-legend { border-color: rgba(11,44,99,.22); }
+.flow button { color: var(--nv); border-color: rgba(11,44,99,.45); }
+.flow button:hover { border-color: var(--nv); background: rgba(255,255,255,.18); }
+.flow button[aria-pressed="true"] { background: var(--nv); color: #fff; border-color: var(--nv); }
+.flow button:focus-visible { outline-color: var(--nv); }
+.flow .flow-caps text { fill: rgba(11,44,99,.72); }
+.flow .edge { stroke: rgba(11,44,99,.35); }
+.flow .edge-flow { stroke: var(--nv); opacity: .55; }
+.flow .edge-flow.loop { stroke: var(--red); opacity: .55; }
+.flow .edge-flow.result { stroke: var(--teal); }
+.flow .loop-label, .flow .loop-label.is-link:hover, .flow .loop-label.active { fill: var(--red); }
+.flow .result-label { fill: var(--teal); }
+.flow .out-group { stroke: rgba(11,44,99,.3); }
+.flow .out-group:hover, .flow .out-group.active { stroke: var(--nv); }
+
+/* nodes */
+.flow .node .shape, .flow .node-out .shape { fill: var(--nv); stroke: var(--nv); }
+.flow .n-label, .flow .n-out, .flow .n-src { fill: #FFFFFF; }
+.flow .n-sub { fill: #C8D5EE; }
+.flow .node-prod .shape { fill: #FFFFFF; stroke: #FFFFFF; }
+.flow .node-prod .n-label { fill: var(--nv); }
+.flow .node-prod .n-sub { fill: var(--nv2); }
+.flow .node:hover .shape, .flow .node.focus .shape, .flow .node-prod.focus .shape, .flow .node-prod:hover .shape { stroke: #FFFFFF; }
+.flow .node-prod.focus .shape, .flow .node-prod:hover .shape { stroke: var(--nv); }
+.flow .node-core .shape { fill: #1A5FD6; stroke: #FFFFFF; }
+.flow .node-core .n-label, .flow .node-core text { fill: #FFFFFF; }
+.flow .node-core .n-sub { fill: #E3ECFB; }
+.flow .core-ring, .flow .core-pulse { stroke: var(--nv); }
+.flow .node-late .shape { fill: rgba(139,46,36,.08); stroke: var(--red); }
+.flow .node-late .n-label { fill: #5A1E17; }
+.flow .node-late .n-sub { fill: #6E3A2E; }
+.flow .lane-label.lane-late { fill: var(--red); }
+.flow .lane-label.lane-early { fill: var(--teal); }
+
+/* moving dots */
+.flow .pt-raw { fill: #FFFFFF; stroke: var(--nv); }
+.flow .pt-read { fill: #1A5FD6; stroke: #FFFFFF; }
+.flow .pt-ok { fill: #FFFFFF; stroke: var(--nv); }
+.flow .pt-flag { fill: var(--red); stroke: #FFFFFF; }
+.flow .pt-result { fill: var(--teal); stroke: #FFFFFF; }
+.flow .pt-wait { fill: #E4C9A0; stroke: var(--red); }
+
+/* side panel */
+.flow-panel .panel-title { color: var(--nv); }
+.flow-panel .panel-body { color: var(--nv2); }
+.flow-counts div { color: rgba(11,44,99,.78); }
+.flow-counts b { color: var(--nv); }
+.flow-counts .flag b { color: var(--red); }
+.flow-counts .res b { color: var(--teal); }
+.flow-rate { color: var(--nv2); }
+.flow-rate input { accent-color: var(--nv); }
+.flow-clock .clock-day, .flow-clock .clock-note { color: rgba(11,44,99,.72); }
+.flow-clock .clock-time { color: var(--nv); }
+
+/* legend */
+.flow-legend { color: var(--nv2); }
+.flow-legend .l-raw { border-color: var(--nv); background: #fff; }
+.flow-legend .l-read { background: #1A5FD6; }
+.flow-legend .l-ok { background: #fff; box-shadow: 0 0 0 1.5px var(--nv); }
+.flow-legend .l-flag { background: var(--red); }
+.flow-legend .l-result { background: var(--teal); }
+.flow-legend .l-wait { background: #E4C9A0; box-shadow: 0 0 0 1.5px var(--red); }

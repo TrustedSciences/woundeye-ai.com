@@ -327,7 +327,7 @@ function initFlow(root) {
 
     var defs = el('defs', {}, svg);
     var pat = el('pattern', { id: uid + '-grid', width: 24, height: 24, patternUnits: 'userSpaceOnUse' }, defs);
-    el('path', { d: 'M24 0H0V24', fill: 'none', stroke: '#1C4380', 'stroke-width': 1 }, pat);
+    el('path', { d: 'M24 0H0V24', fill: 'none', stroke: '#BC9550', 'stroke-width': 1 }, pat);
     el('rect', { width: L.W, height: L.H, fill: 'url(#' + uid + '-grid)' }, svg);
 
     // column captions
