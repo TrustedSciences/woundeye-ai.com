@@ -760,3 +760,9 @@ main > .hero ~ section:not(.flow-intro) { scroll-margin-top: calc(4.5rem + 1px);
 .uc-head .back-link { margin-bottom: 1.75rem; }
 .uc-flow { margin-top: 2rem; margin-bottom: clamp(2.5rem, 5vw, 4rem); }
 section > .source-note.wrap { margin-top: -2rem; margin-bottom: 2.5rem; display: block; }
+
+/* Precision Routing circle: AssureStage blue */
+.flow .node-core .shape { fill: #1A55C4; stroke: #8FB0EE; stroke-width: 1.5; }
+.flow .node-core text, .flow .node-core .n-label { fill: #FFFFFF; }
+.flow .node-core .n-sub { fill: #DCE6FA; }
+.flow .core-ring, .flow .core-pulse { stroke: #5C8DE4; }

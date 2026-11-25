@@ -1,4 +1,4 @@
-// How WoundRounds, Wound Solutions AI and AssureStage Clinical Wound Assessments flow together.
+// How WoundRounds, precision routing and AssureStage Clinical Wound Assessments flow together.
 // Self-contained: needs a <div id="wsa-flow"> with the markup from platform.html.
 (function () {
 var FLOW_N = 0;
@@ -20,7 +20,7 @@ function initFlow(root) {
     home:  { label: 'Home and family', stage: 1, kind: 'src', home: true },
     wr:    { label: 'WoundRounds', sub: 'Bedside documentation', stage: 1, kind: 'prod' },
     we:    { label: 'WoundEye', sub: 'Capture at home', stage: 1, kind: 'prod', home: true },
-    ai:    { label: 'Wound Solutions AI', sub: 'Workflow agents', sub2: 'Intake, worklist, routing', stage: 2, kind: 'core', home: true },
+    ai:    { label: 'Precision Routing', sub: 'Worklists and', sub2: 'Clinician Coordination', stage: 2, kind: 'core', home: true },
     cwa:   { label: 'AssureStage', sub: 'Clinical Wound Assessments', sub2: 'Certified wound specialists', stage: 3, kind: 'prod' },
     dash:  { label: 'Care team dashboard', sub: 'Flags and follow-ups', stage: 4, kind: 'out' },
     rec:   { label: 'Defensible record', sub: 'Survey and liability', stage: 4, kind: 'out' },
@@ -56,11 +56,11 @@ function initFlow(root) {
 
   var STAGES = [
     { n: 0, title: 'The whole loop',
-      body: 'Nurses document at the bedside in WoundRounds, and those assessments go straight to our AssureStage Clinical Wound Assessment team. At home, WoundEye captures a photo, and Wound Solutions AI\u2019s workflow agents place it on the specialist\u2019s worklist. Certified wound specialists make every clinical decision. For WoundEye, the specialist\u2019s result goes back through the app to the patient, family carer or home nurse. The result also reaches the care team, the record and the systems that need it, and the next follow-up joins the same wound\u2019s timeline.' },
+      body: 'Nurses document at the bedside in WoundRounds, and those assessments go straight to our AssureStage Clinical Wound Assessment team. At home, WoundEye captures a photo, and precision routing places it on the specialist\u2019s worklist. Certified wound specialists make every clinical decision. For WoundEye, the specialist\u2019s result goes back through the app to the patient, family carer or home nurse. The result also reaches the care team, the record and the systems that need it, and the next follow-up joins the same wound\u2019s timeline.' },
     { n: 1, title: 'Capture',
       body: 'Nurses document at the bedside in WoundRounds: photo, location, measurements and Braden risk, in the facility\u2019s own workflow. At home, a patient or family carer uses WoundEye: one photo on their own mobile device and two taps on a body map.' },
     { n: 2, title: 'Worklist',
-      body: 'For WoundEye submissions, Wound Solutions AI runs workflow agents that do the administrative work. They check that the photo is usable and filed to the right body site, add it to the certified wound specialist\u2019s worklist, track it until it has been reviewed, send reminders and schedule follow-ups. Agents simplify, manage and scale the workflow. They make no clinical decisions.' },
+      body: 'For WoundEye submissions, precision routing, worklists and clinician coordination handle the administrative work. They check that the photo is usable and filed to the right body site, add it to the certified wound specialist\u2019s worklist, track it until it has been reviewed, send reminders and schedule follow-ups. This coordination simplifies, manages and scales the workflow. It makes no clinical decisions.' },
     { n: 3, title: 'AssureStage Clinical Wound Assessment',
       body: 'Certified wound specialists review WoundRounds assessments and WoundEye submissions. They determine wound type and stage, check measurements, compute the PUSH score and screen for infection. A wound with suspected infection is flagged. Every clinical decision is theirs, and the record shows who decided, and when. For WoundEye submissions, the result goes straight back to the patient and carer in the app.' },
     { n: 4, title: 'Act and record',
@@ -99,22 +99,22 @@ function initFlow(root) {
       } }
   };
 
-  // WoundEye-only variant (used on the WoundEye page): home -> WoundEye -> agents -> specialist -> result back home
+  // WoundEye-only variant (used on the WoundEye page): home -> WoundEye -> routing -> specialist -> result back home
   var variant = root.getAttribute('data-variant');
   var LAYOUTS_WE = {
     h: { W: 1200, H: 400, dir: 'h', resultLabel: [640, 352],
-      caps: [[105, 'At home'], [355, 'Capture'], [650, 'Workflow agents'], [975, 'Clinical review']],
+      caps: [[105, 'At home'], [355, 'Capture'], [650, 'Routing & coordination'], [975, 'Clinical review']],
       pos: { home: [105, 180, 170, 48], we: [355, 180, 200, 76], ai: [650, 180, 92], cwa: [975, 180, 230, 96] } },
     v: { W: 400, H: 640, dir: 'v', resultLabel: null,
       pos: { home: [190, 50, 210, 46], we: [190, 160, 210, 68], ai: [190, 340, 82], cwa: [190, 540, 250, 86] } }
   };
   var STAGES_WE = [
     { n: 0, title: 'The WoundEye loop',
-      body: 'A patient, family carer or home nurse photographs the wound in WoundEye. Wound Solutions AI\u2019s workflow agents check the photo in and place it on a certified wound specialist\u2019s worklist. The specialist makes the assessment, and the result goes back through the app to the patient and carer.' },
+      body: 'A patient, family carer or home nurse photographs the wound in WoundEye. Precision routing checks the photo in and places it on a certified wound specialist\u2019s worklist. The specialist makes the assessment, and the result goes back through the app to the patient and carer.' },
     { n: 1, title: 'Capture',
       body: 'One guided photo on any mobile device, two taps on a body map to mark the spot, and a few plain questions about pain and size. Location data and camera details are stripped before the photo is stored.' },
     { n: 2, title: 'Worklist',
-      body: 'Workflow agents do the administrative work. They check that the photo is usable and filed to the right body site, add it to the specialist\u2019s worklist, track it until it has been reviewed, send reminders and schedule follow-ups. They make no clinical decisions.' },
+      body: 'Precision routing and coordination do the administrative work. They check that the photo is usable and filed to the right body site, add it to the specialist\u2019s worklist, track it until it has been reviewed, send reminders and schedule follow-ups. They make no clinical decisions.' },
     { n: 3, title: 'Clinical review',
       body: 'A certified wound specialist reviews the photograph and its location, determines wound type and stage, screens for infection and sets the follow-up. Every clinical decision is theirs, and the record shows who decided, and when.' },
     { n: 4, title: 'Result',
@@ -122,11 +122,11 @@ function initFlow(root) {
   ];
   var STAGES_WE_CLIN = [
     { n: 0, title: 'The specialist\u2019s view of the loop',
-      body: 'Photos arrive from patients and carers at home. Wound Solutions AI\u2019s workflow agents check each one in, file it to the right body site and place it on your worklist. You make the clinical call, and your signed assessment goes back through WoundEye to the patient and carer.' },
+      body: 'Photos arrive from patients and carers at home. Precision routing checks each one in, files it to the right body site and places it on your worklist. You make the clinical call, and your signed assessment goes back through WoundEye to the patient and carer.' },
     { n: 1, title: 'Capture',
       body: 'Each submission arrives with a guided photo, the exact body-map site, the patient\u2019s pain score and a size compared to something familiar. Location data and camera details are stripped before the photo is stored.' },
     { n: 2, title: 'Worklist',
-      body: 'Agents do the administrative work so you don\u2019t have to: they confirm the photo is usable, file it under the right wound site, queue it on your worklist, track it until it is reviewed and send follow-up reminders. They make no clinical decisions.' },
+      body: 'Precision routing and coordination handle the administrative work so you don\u2019t have to: they confirm the photo is usable, file it under the right wound site, queue it on your worklist, track it until it is reviewed and send follow-up reminders. They make no clinical decisions.' },
     { n: 3, title: 'Clinical review',
       body: 'You review the photograph alongside its site and the wound\u2019s photo timeline, determine type and stage, compute the PUSH score, screen for infection and set the follow-up. Every decision is yours, and the record shows who decided, and when.' },
     { n: 4, title: 'Result',
@@ -322,7 +322,7 @@ function initFlow(root) {
     particles.forEach(function (p) { p.el.remove(); }); particles = []; pool = []; paths = {}; nodeEls = {};
 
     svg = el('svg', { viewBox: '0 0 ' + L.W + ' ' + L.H, role: 'img', 'aria-labelledby': uid + '-title ' + uid + '-desc', 'class': 'is-' + L.dir }, stage);
-    el('title', { id: uid + '-title' }, svg).textContent = 'How WoundRounds, Wound Solutions AI and AssureStage Clinical Wound Assessments flow together';
+    el('title', { id: uid + '-title' }, svg).textContent = 'How WoundRounds, precision routing and AssureStage Clinical Wound Assessments flow together';
     el('desc', { id: uid + '-desc' }, svg).textContent = STAGES[0].body;
 
     var defs = el('defs', {}, svg);
@@ -333,7 +333,7 @@ function initFlow(root) {
     // column captions
     var cap = el('g', { 'class': 'flow-caps' }, svg);
     var caps = L.caps ? L.caps : L.dir === 'h'
-      ? [[95, 'Where wounds are seen'], [345, 'Capture'], [612, 'Workflow agents'], [880, 'Clinical review'], [1110, 'Act and record']]
+      ? [[95, 'Where wounds are seen'], [345, 'Capture'], [612, 'Routing & coordination'], [880, 'Clinical review'], [1110, 'Act and record']]
       : [];
     caps.forEach(function (c) { var t = el('text', { x: c[0], y: L.H - 14, 'text-anchor': 'middle' }, cap); t.textContent = c[1]; });
 
@@ -459,7 +459,7 @@ function initFlow(root) {
     hb: 'Members already receiving care at home, where a wound is usually first noticed by family or a home-health aide.',
     pd: 'Post-discharge follow-up: 46% of Medicare patients referred to home health care at hospital discharge get no home health visit within 14 days.',
     ru: 'Members in rural counties with no wound clinic nearby.',
-    cap: 'A guided photo on whatever mobile device the member already owns. Image metadata is stripped and the photo goes to secure storage. Photographs never pass through a third-party AI service.',
+    cap: 'A guided photo on whatever mobile device the member already owns. Image metadata is stripped and the photo goes to secure storage. Photographs are never sent to a third-party analysis service.',
     loc: 'Two taps on a clinical body map, region then zone, so the same site is tracked visit after visit.',
     asx: 'A licensed wound-care clinician reviews the photograph and its location and assesses type, severity and stage. The app itself does not diagnose or treat; every assessment is made by the reviewing clinician.',
     fup: 'The clinician sets the follow-up. The next photo of the same site joins its timeline, building a measurement trend visit by visit.',
@@ -488,8 +488,8 @@ function initFlow(root) {
     cah: 'Specialist-level wound oversight where wound specialists are scarce.',
     home: 'Patients at home, family carers and home nurses. They send the photo through WoundEye, and the specialist\u2019s result comes back to them in the app, in plain language, with guidance and the follow-up date.',
     wr: 'WoundRounds is the bedside tool: easy documentation, tracking and trending, and dashboards of each patient\u2019s risk drivers. Assessments go straight to the AssureStage Clinical Wound Assessment team for review.',
-    we: 'WoundEye: one photo on the mobile device the family already owns, two taps on a body map, and a few plain questions. Workflow agents pass the photo to the certified wound specialist\u2019s worklist, and route the specialist\u2019s result back to the patient and carer in the app.',
-    ai: 'Workflow agents for WoundEye. They check each photo in, file it to the right body site, build and track the specialist\u2019s worklist, send reminders and schedule follow-ups. They make no clinical decisions. Photographs never pass through a third-party AI service.',
+    we: 'WoundEye: one photo on the mobile device the family already owns, two taps on a body map, and a few plain questions. Precision routing passes the photo to the certified wound specialist\u2019s worklist, and route the specialist\u2019s result back to the patient and carer in the app.',
+    ai: 'Precision routing, worklists and clinician coordination for WoundEye. They check each photo in, file it to the right body site, build and track the specialist\u2019s worklist, send reminders and schedule follow-ups. They make no clinical decisions. Photographs are never sent to a third-party analysis service.',
     cwa: 'AssureStage: our certified wound specialists review WoundRounds assessments and WoundEye submissions, determine type and stage, and flag suspected infection. For WoundRounds, every final clinical decision is made by the facility\u2019s clinical staff; for WoundEye, by the specialist.',
     dash: 'Live counts by wound type: flagged, follow-up due and recent. A flag clears only when a later assessment clears it.',
     rec: 'A dated, clinician-signed record with an audit trail written by the database. This is what holds up in a survey or a lawsuit.',
