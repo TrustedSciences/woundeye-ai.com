@@ -338,3 +338,44 @@ sup.fn a:hover { text-decoration: underline; }
 .two-col .finding { grid-template-columns: 1fr; gap: .5rem; align-items: start; }
 .two-col .finding p { max-width: 26rem; }
 @media (max-width: 560px) { .screens { grid-template-columns: 1fr 1fr; gap: 1rem; } .screens figcaption { font-size: .8rem; } }
+
+/* ---------- Body map section ---------- */
+.map-steps { list-style: none; margin: 2.5rem 0 0; padding: 0; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 2rem; counter-reset: ms; border-top: 1px solid var(--ink); padding-top: 2rem; }
+.map-steps li { counter-increment: ms; }
+.map-steps .plate { background: #fff; padding: .5rem; }
+.map-steps .plate img { width: 100%; max-height: 22rem; object-fit: contain; }
+.map-steps h3 { font-size: 1.3rem; font-weight: 400; margin: 1.1rem 0 .4rem; display: flex; gap: .6rem; align-items: baseline; }
+.map-steps h3::before { content: counter(ms); font: 700 .8rem var(--sans); width: 1.6rem; height: 1.6rem; border-radius: 50%; border: 1.5px solid var(--ink); display: inline-grid; place-items: center; flex: 0 0 auto; transform: translateY(-.15rem); }
+.map-steps p { color: var(--ink-2); font-size: 1rem; margin: 0; }
+@media (max-width: 860px) { .map-steps { grid-template-columns: 1fr; } .map-steps .plate img { max-height: 18rem; } }
+
+.map-demo { margin-top: 3.5rem; background: var(--paper); border: 1px solid var(--rule); display: grid; grid-template-columns: minmax(0, .9fr) minmax(0, 1.4fr); }
+.map-demo-head { padding: 2rem; border-right: 1px solid var(--rule); }
+.map-demo-head h3 { font-size: 1.6rem; font-weight: 400; margin-bottom: .6rem; }
+.map-demo-head > p:not(.kicker) { color: var(--ink-2); }
+.map-tabs { display: flex; flex-wrap: wrap; gap: .5rem; margin-top: 1.25rem; }
+.map-tabs button { font: 700 .92rem var(--sans); background: transparent; color: var(--ink); border: 1.5px solid var(--ink); border-radius: 999px; padding: .5rem .95rem; cursor: pointer; min-height: 40px; }
+.map-tabs button[aria-selected="true"] { background: var(--ink); color: var(--paper); }
+.map-tabs button:hover { background: var(--dune); }
+.map-tabs button[aria-selected="true"]:hover { background: var(--blue); border-color: var(--blue); }
+.map-demo-body { padding: 2rem; display: grid; grid-template-columns: minmax(0, 1.2fr) auto minmax(0, .8fr); gap: 1.25rem; align-items: center; }
+.map-link { font: 400 2rem var(--sans); color: var(--ink-3); }
+.wound-photo { margin: 0; }
+.wound-photo figcaption, .map-view figcaption { font-family: var(--sans); font-size: .85rem; color: var(--ink-2); margin-top: .6rem; display: flex; flex-direction: column; gap: .35rem; }
+.map-view { background: #fff; padding: .5rem; margin: 0; }
+.map-view img { width: 100%; max-height: 24rem; object-fit: contain; transition: opacity .2s; }
+.selected { align-self: flex-start; background: #E3EDF9; color: #1A4E99; font-weight: 700; padding: .3rem .7rem; border-radius: 999px; }
+.reveal { position: relative; overflow: hidden; border: 1px solid var(--rule); background: var(--ink); }
+.reveal img { width: 100%; height: auto; filter: blur(18px) saturate(.6); transform: scale(1.08); transition: filter .3s, transform .3s; }
+.reveal.shown img { filter: none; transform: none; }
+.reveal-btn { position: absolute; inset: auto 50% 50% auto; transform: translate(50%, 50%); font: 700 .92rem var(--sans); background: var(--paper); color: var(--ink); border: 1.5px solid var(--ink); border-radius: 3px; padding: .6rem 1rem; cursor: pointer; }
+.reveal.shown .reveal-btn { display: none; }
+@media (max-width: 1000px) { .map-demo { grid-template-columns: 1fr; } .map-demo-head { border-right: 0; border-bottom: 1px solid var(--rule); } }
+@media (max-width: 600px) { .map-demo-body { grid-template-columns: 1fr; } .map-link { transform: rotate(90deg); justify-self: center; } .map-view { max-width: 16rem; justify-self: center; } }
+
+.map-facts { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); margin: 3rem 0 0; border-top: 1px solid var(--ink); }
+.map-facts > div { padding: 1.1rem 1.25rem 0 0; }
+.map-facts > div + div { padding-left: 1.25rem; border-left: 1px solid var(--rule); }
+.map-facts dt { font-family: var(--serif); font-size: 2.4rem; line-height: 1; margin-bottom: .45rem; }
+.map-facts dd { margin: 0; font: .9rem/1.45 var(--sans); color: var(--ink-2); }
+@media (max-width: 860px) { .map-facts { grid-template-columns: 1fr 1fr; } .map-facts > div:nth-child(3) { padding-left: 0; border-left: 0; } .map-facts > div { padding-bottom: 1rem; } }

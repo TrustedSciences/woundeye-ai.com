@@ -269,22 +269,68 @@
 
   <!-- Body map -->
   <section class="section" id="bodymap">
-    <div class="wrap split">
-      <div>
-        <p class="kicker">Interactive body map</p>
-        <h2>Pin the exact site, visit after visit</h2>
-        <p class="lede mt-1">Designed with medical illustrators. Tap the wound's location, zoom into the region, and the precise site is stored with every record — so a recurrence on the same spot is never mistaken for a new wound.</p>
-        <ul class="checklist">
-          <li>Body-map location tagging with precise wound-site pinning</li>
-          <li>Region zoom for pinpoint placement</li>
-          <li>The same site tracked across every visit</li>
-          <li>New 3D-rendered body figures arriving with V3</li>
-        </ul>
+    <div class="wrap">
+      <div class="section-head">
+        <div>
+          <p class="kicker">Interactive body map</p>
+          <h2>Every wound gets an exact address</h2>
+        </div>
+        <p class="lede">After the photo, WoundEye asks one question: <em>where is it?</em> Tap the body, open the close-up, and pin the exact spot. The site is saved with the photo, so the same wound can be found, compared and tracked on every visit — and a new wound on the same foot is never confused with an old one.</p>
       </div>
-      <figure class="plate solo">
-        <img src="/images/screen-3d-body.jpg" alt="3D-rendered body figure used for wound-site pinning" width="420" height="840" loading="lazy">
-        <figcaption>3D-rendered body figure — arriving with V3</figcaption>
-      </figure>
+
+      <ol class="map-steps">
+        <li>
+          <figure class="plate"><img src="/images/map-body-front.jpg" alt="Whole-body figure, front view, divided into tappable regions" width="314" height="626" loading="lazy"></figure>
+          <h3>Tap the body</h3>
+          <p>Choose a male or female figure and turn it — front, back, left or right side. Tap the region: head and neck, torso, hips and buttocks, arms, hands, thighs, lower legs or feet.</p>
+        </li>
+        <li>
+          <figure class="plate"><img src="/images/map-foot-top.jpg" alt="Close-up of the top of the left foot with the forefoot highlighted" width="314" height="626" loading="lazy"></figure>
+          <h3>Open the close-up</h3>
+          <p>The region zooms in with its own views — top or sole for a foot; front, outer side, back or inner side for a lower leg — and named anatomical areas to choose from.</p>
+        </li>
+        <li>
+          <figure class="plate"><img src="/images/map-heel-sole.jpg" alt="Sole of the left foot with the heel highlighted and a red pin on the wound site" width="314" height="626" loading="lazy"></figure>
+          <h3>Pin the exact spot</h3>
+          <p>Tap where the wound is. A pin drops, the area is named — <b>“Selected: Lt Heel”</b> — and the location is stored with the record.</p>
+        </li>
+      </ol>
+
+      <div class="map-demo" id="map-demo">
+        <div class="map-demo-head">
+          <p class="kicker">See it in the app</p>
+          <h3>One photo, one pinned site</h3>
+          <p>A heel wound photo, pinned on the sole close-up. Choose another site to see how the map handles different parts of the leg and foot.</p>
+          <div class="map-tabs" role="tablist" aria-label="Example wound sites">
+            <button role="tab" aria-selected="true" data-img="/images/map-heel-sole.jpg" data-label="Lt Heel" data-view="Left foot · Sole" data-alt="Sole of the left foot with a pin on the heel">Heel</button>
+            <button role="tab" aria-selected="false" data-img="/images/map-foot-top.jpg" data-label="Lt Forefoot (Top)" data-view="Left foot · Top" data-alt="Top of the left foot with a pin on the forefoot">Forefoot</button>
+            <button role="tab" aria-selected="false" data-img="/images/map-ankle-inner.jpg" data-label="Left Medial Malleolus" data-view="Left lower leg · Inner side" data-alt="Inner side of the left lower leg with a pin on the inner ankle bone">Inner ankle</button>
+            <button role="tab" aria-selected="false" data-img="/images/map-calf-inner.jpg" data-label="Left Medial Calf" data-view="Left lower leg · Inner side" data-alt="Inner side of the left lower leg with the calf highlighted and pinned">Inner calf</button>
+          </div>
+        </div>
+        <div class="map-demo-body">
+          <figure class="wound-photo">
+            <div class="reveal" id="wound-reveal">
+              <img src="/images/wound-heel-example.jpg" alt="Clinical photograph of an open wound on a heel" width="561" height="356" loading="lazy">
+              <button type="button" class="reveal-btn">Show clinical photo</button>
+            </div>
+            <figcaption>Wound photo · step 2 of 4</figcaption>
+          </figure>
+          <div class="map-link" aria-hidden="true">→</div>
+          <figure class="plate map-view">
+            <img id="map-img" src="/images/map-heel-sole.jpg" alt="Sole of the left foot with a pin on the heel" width="314" height="626">
+            <figcaption><span class="selected" id="map-label">Selected: Lt Heel</span><span id="map-view">Left foot · Sole</span></figcaption>
+          </figure>
+        </div>
+      </div>
+
+      <dl class="map-facts">
+        <div><dt>2</dt><dd>body figures, male and female</dd></div>
+        <div><dt>4</dt><dd>whole-body views: front, back, left and right side</dd></div>
+        <div><dt>11</dt><dd>named areas on the sole of each foot, from heel to each metatarsal head and toe</dd></div>
+        <div><dt>1 tap</dt><dd>to pin the site — stored with every photo, visit after visit</dd></div>
+      </dl>
+      <p class="source-note">Screens captured from the live WoundEye app. New 3D-rendered figures arrive with V3.</p>
     </div>
   </section>
 
