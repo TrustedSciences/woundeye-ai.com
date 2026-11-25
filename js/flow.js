@@ -120,7 +120,20 @@ function initFlow(root) {
     { n: 4, title: 'Result',
       body: 'The specialist\u2019s result comes back through WoundEye in plain language: what the wound is, what to do tonight, the signs that mean call 911, and the follow-up date. The carer sees it too, and every follow-up photo joins the same wound\u2019s timeline.' }
   ];
+  var STAGES_WE_CLIN = [
+    { n: 0, title: 'The specialist\u2019s view of the loop',
+      body: 'Photos arrive from patients and carers at home. Wound Solutions AI\u2019s workflow agents check each one in, file it to the right body site and place it on your worklist. You make the clinical call, and your signed assessment goes back through WoundEye to the patient and carer.' },
+    { n: 1, title: 'Capture',
+      body: 'Each submission arrives with a guided photo, the exact body-map site, the patient\u2019s pain score and a size compared to something familiar. Location data and camera details are stripped before the photo is stored.' },
+    { n: 2, title: 'Worklist',
+      body: 'Agents do the administrative work so you don\u2019t have to: they confirm the photo is usable, file it under the right wound site, queue it on your worklist, track it until it is reviewed and send follow-up reminders. They make no clinical decisions.' },
+    { n: 3, title: 'Clinical review',
+      body: 'You review the photograph alongside its site and the wound\u2019s photo timeline, determine type and stage, compute the PUSH score, screen for infection and set the follow-up. Every decision is yours, and the record shows who decided, and when.' },
+    { n: 4, title: 'Result',
+      body: 'Your assessment goes back to the patient and carer in plain language: what the wound is, what to do tonight, the signs that mean call 911, and the follow-up date. Every later photo of the same site joins its timeline for your next review.' }
+  ];
   if (variant === 'woundeye') STAGES = STAGES_WE;
+  if (variant === 'woundeye' && root.getAttribute('data-audience') === 'clinician') STAGES = STAGES_WE_CLIN;
 
   // WoundRounds-only variant (used on the Solutions page): facilities -> WoundRounds -> specialists -> outputs
   var LAYOUTS_WR = {
@@ -206,11 +219,11 @@ function initFlow(root) {
     { n: 1, num: 1, title: 'Where the wound starts',
       body: '10.5 million Medicare beneficiaries have a wound. Between visits, the only people who see it are whoever is at home: a spouse, a daughter, a home-health aide.' },
     { n: 2, num: 2, title: 'First look',
-      body: 'On the usual path, the first look waits: 46% of Medicare patients discharged to home health get no home health visit within 14 days. With WoundEye, the first look happens at home: a guided photo on any mobile device, two taps on a body map and a few plain questions. No clinic visit, no special camera, no kit.' },
+      body: 'On the usual path, the first look waits: 46% of Medicare patients referred to home health care at hospital discharge get no home health visit within 14 days. With WoundEye, the first look happens at home: a guided photo on any mobile device, two taps on a body map and a few plain questions. No clinic visit, no special camera, no kit.' },
     { n: 3, num: 3, title: 'Assessment',
       body: 'On the usual path, the wound reaches a clinic once it is larger and harder to treat. With WoundEye, a licensed wound-care clinician reviews the photograph, writes the assessment and sets the follow-up. The record shows who decided. The app itself does not diagnose or treat.' },
     { n: 4, num: 4, title: 'Outcome',
-      body: 'Late wounds become the episodes every plan knows: an admission, a surgery, sometimes an amputation. A diabetic foot ulcer adds $11,710 a year in health care costs for a Medicare patient. With WoundEye, the member gets a plain-language answer the same day, and the plan gets a clinician-signed record, a photo timeline and structured exports.' }
+      body: 'Late wounds become the episodes every plan knows: an admission, a surgery, sometimes an amputation. A diabetic foot ulcer adds about $11,710 a year in health care costs for a Medicare patient, and $16,883 for a privately insured patient. With WoundEye, the member gets a plain-language answer the same day, and the plan gets a clinician-signed record, a photo timeline and structured exports.' }
   ];
   if (variant === 'ma') STAGES = STAGES_MA;
 
@@ -247,6 +260,7 @@ function initFlow(root) {
   // ---------------------------------------------------------------- state
   var S = { L: null, mode: variant === 'woundeye' ? 'home' : (variant === 'woundrounds' || variant === 'woundrounds-core') ? 'fac' : variant === 'ma' ? 'compare' : 'both', perDay: (root.querySelector("[data-rate]") ? +root.querySelector("[data-rate]").value : 150), playing: !reduce, stage: 0, focus: null,
             counts: { captured: 0, read: 0, confirmed: 0, flagged: 0, record: 0, results: 0 }, simSeconds: 0 };
+  S.stage = +root.getAttribute('data-start') || 0;
   var svg, gEdges, gFlow, gNodes, gParts, paths = {}, nodeEls = {}, particles = [], pool = [];
   var spawnAcc = 0, last = 0;
 
@@ -443,7 +457,7 @@ function initFlow(root) {
   };
   var NODE_NOTES = {
     hb: 'Members already receiving care at home, where a wound is usually first noticed by family or a home-health aide.',
-    pd: 'Post-discharge follow-up: 46% of Medicare patients discharged to home health get no home health visit within 14 days.',
+    pd: 'Post-discharge follow-up: 46% of Medicare patients referred to home health care at hospital discharge get no home health visit within 14 days.',
     ru: 'Members in rural counties with no wound clinic nearby.',
     cap: 'A guided photo on whatever mobile device the member already owns. Image metadata is stripped and the photo goes to secure storage. Photographs never pass through a third-party AI service.',
     loc: 'Two taps on a clinical body map, region then zone, so the same site is tracked visit after visit.',
@@ -454,7 +468,7 @@ function initFlow(root) {
     pex: 'Structured export in FHIR R4, JSON and CSV, a pull API and signed webhooks, and PDF reports ready for the chart. Exports use scoped API keys.',
     srec: 'Every assessment carries a licensed clinician\u2019s sign-off, and an immutable audit trail records every change.',
     mhome: 'A pressure injury on a heel, or an ulcer on the sole of a diabetic foot, does not announce itself. It starts small, at home, and the people around it are family and home-health aides.',
-    late1: 'Between visits, nobody clinical looks at the wound. 46% of Medicare patients discharged to home health get no home health visit within 14 days (JAMA Network Open, 2020).',
+    late1: 'Between visits, nobody clinical looks at the wound. 46% of Medicare patients referred to home health care at hospital discharge get no home health visit within 14 days (JAMA Network Open, 2020).',
     late2: 'By the time the wound reaches a clinic, it is often larger and harder to treat. The expensive part of wound care is almost always the late part.',
     late3: 'The episode every plan knows: an admission, a surgery, sometimes an amputation. Medicare spent as much as $67 billion on wound care in 2019, and there are about 150,000 non-traumatic leg amputations in the US each year, most in people with diabetes.',
     weh: 'The member or caregiver photographs the wound on whatever mobile device they already own, marks the spot on a body map and answers a few plain questions.',
@@ -642,7 +656,7 @@ function initFlow(root) {
   }
   function tick(t) {
     var dt = last ? Math.min(0.05, (t - last) / 1000) : 0; last = t;
-    if (S.playing) {
+    if (S.playing && S.visible !== false) {
       S.simSeconds += dt;
       spawnAcc += dt * (S.perDay / 30);  // one simulated day = 30 seconds
       while (spawnAcc >= 1) { spawnAcc -= 1; if (particles.length < MAX_DOTS) spawn(); else spawnVirtual(); }
@@ -738,6 +752,7 @@ function initFlow(root) {
     var atCwa = p.route.indexOf('ai-cwa') > -1 ? 3 : 2; if (p.i >= 2 && atCwa === 3) setState(p.el, 'read'); if (p.i >= atCwa) setState(p.el, p.flag ? 'flag' : 'ok');
     var pt = paths[p.route[p.i]].el.getPointAtLength(p.d); p.el.setAttribute('cx', pt.x); p.el.setAttribute('cy', pt.y); }
   S.counts = { captured: 0, read: 0, confirmed: 0, flagged: 0, record: 0, results: 0 }; renderCounts();
+  if ('IntersectionObserver' in window) new IntersectionObserver(function (es) { es.forEach(function (e) { S.visible = e.isIntersecting; }); }).observe(root);
   requestAnimationFrame(tick);
 }
 document.querySelectorAll('.flow[data-flow]').forEach(initFlow);

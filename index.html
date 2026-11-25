@@ -100,125 +100,6 @@
     </div>
   </section>
 
-  <!-- Workflow animation -->
-  <section class="section ink-soft" id="workflow">
-    <div class="wrap">
-      <div class="section-head">
-        <div>
-          <p class="kicker">The consumer workflow</p>
-          <h2>How a wound moves through WoundEye</h2>
-        </div>
-        <p class="lede">A patient or carer photographs the wound at home. Workflow agents route it to a certified wound specialist, who makes every clinical decision — and the result comes back to the patient and carer in the app.</p>
-      </div>
-    </div>
-    <div class="wrap flow-wide mt-2">
-    <div class="flow flow-we" id="wsa-flow" data-flow data-variant="woundeye">
-  <div class="flow-bar">
-    <div class="flow-steps" role="group" aria-label="Stages">
-      <button type="button" data-stage="0" aria-pressed="true">Whole loop</button>
-      <button type="button" data-stage="1">1. Capture</button>
-      <button type="button" data-stage="2">2. Worklist</button>
-      <button type="button" data-stage="3">3. Clinical review</button>
-      <button type="button" data-stage="4">4. Result</button>
-    </div>
-  </div>
-  <div class="flow-body">
-    <div class="flow-stage"></div>
-    <div class="flow-side">
-      <div class="flow-panel" aria-live="polite"><h3 class="panel-title"></h3><p class="panel-body"></p></div>
-      <div class="flow-counts">
-        <div><b data-count="captured">0</b>Photos sent from home</div>
-        <div><b data-count="read">0</b>On the specialist worklist</div>
-        <div><b data-count="confirmed">0</b>Specialist assessments</div>
-        <div class="res"><b data-count="results">0</b>Results back to home</div>
-      </div>
-      <div class="flow-rate">
-        <div class="row"><label for="flow-rate">Photos per day</label><b data-rate-out>60</b></div>
-        <input id="flow-rate" type="range" min="20" max="5000" step="10" value="60" data-rate>
-        <div class="row" style="margin-top:.75rem"><span data-day>Simulated day 1</span><span><button type="button" data-play>Pause</button> <button type="button" data-reset>Reset</button></span></div>
-      </div>
-    </div>
-  </div>
-  <div class="flow-legend">
-    <span><i class="l-raw"></i>Photo sent from home</span>
-    <span><i class="l-read"></i>Queued for the specialist by agents</span>
-    <span><i class="l-result"></i>Result returned to patient and carer</span>
-    <span class="flow-foot">Illustrative simulation, not client data. Select a stage or any box to read about it.</span>
-  </div>
-</div>
-    </div>
-  </section>
-
-  <!-- AssureStage -->
-  <section class="section paper" id="assurestage">
-    <div class="wrap">
-      <div class="section-head">
-        <div>
-          <img class="as-logo" src="/images/flow/assurestage-logo.png" alt="AssureStage" width="220" height="60" loading="lazy">
-          <p class="kicker">The clinicians behind every answer</p>
-          <h2>AssureStage Clinical Wound Assessments</h2>
-        </div>
-        <div>
-          <p class="lede">AssureStage is Wound Solutions AI’s team of certified wound specialists. When a WoundEye photo arrives, it is an AssureStage specialist — not software — who looks at the wound and decides what it is and what happens next.</p>
-          <p class="lede">The same team reviews bedside assessments from WoundRounds in hospitals and facilities, catching staging errors, missing measurements and gaps before they reach a survey, a claim or a courtroom.</p>
-        </div>
-      </div>
-
-      <ol class="as-steps">
-        <li>
-          <h3>Reviews the photo and its site</h3>
-          <p>A certified wound specialist examines the photograph together with the exact location pinned on the body map.</p>
-        </li>
-        <li>
-          <h3>Determines type and stage</h3>
-          <p>The specialist decides what kind of wound it is and how advanced it is, and computes the PUSH healing score.</p>
-        </li>
-        <li>
-          <h3>Screens for infection</h3>
-          <p>The specialist screens the wound for signs of infection and flags any suspected infection in the assessment.</p>
-        </li>
-        <li>
-          <h3>Sets the follow-up</h3>
-          <p>The result goes back through WoundEye in plain language — what the wound is, what to do tonight, the signs that mean call 911, and the follow-up date.</p>
-        </li>
-      </ol>
-
-      <div class="as-photos">
-        <figure><img src="/images/as-capture.jpg" alt="A clinician in blue gloves photographs a patient's bandaged foot with a phone" width="360" height="240" loading="lazy"></figure>
-        <figure><img src="/images/as-stage.jpg" alt="A gloved clinician examines an open wound on the heel of a patient's foot" width="430" height="240" loading="lazy"></figure>
-        <figure><img src="/images/as-infection.jpg" alt="Swollen, reddened feet and ankles, with a hand holding one ankle" width="427" height="240" loading="lazy"></figure>
-        <figure><img src="/images/as-followup.jpg" alt="A clinician kneels to check a patient's bare foot at home" width="360" height="240" loading="lazy"></figure>
-      </div>
-
-      <div class="as-split">
-        <div class="as-col">
-          <p class="who">Workflow agents</p>
-          <h3>Handle the routing</h3>
-          <ul>
-            <li>Check each photo in and confirm it is usable</li>
-            <li>File it to the right body site</li>
-            <li>Add it to the specialist’s worklist and track it until reviewed</li>
-            <li>Send reminders and schedule follow-ups</li>
-          </ul>
-          <p class="as-note">They simplify, manage and scale the workflow — and make no clinical decisions.</p>
-        </div>
-        <div class="as-col as-human">
-          <p class="who">AssureStage specialists</p>
-          <h3>Make every clinical decision</h3>
-          <ul>
-            <li>Wound type and stage</li>
-            <li>PUSH healing score</li>
-            <li>Suspected infection</li>
-            <li>Follow-up plan</li>
-          </ul>
-          <p class="as-note">Every decision is theirs, and the record shows who decided, and when.</p>
-        </div>
-      </div>
-
-      <p class="source-note">Learn more about AssureStage at <a href="https://wounds-ai.com/solutions#wound-qa">wounds-ai.com</a>.</p>
-    </div>
-  </section>
-
   <!-- Stats -->
   <section class="stats-band" aria-label="The scale of the problem">
     <div class="wrap">
@@ -325,8 +206,54 @@
 
   <!-- How it works -->
   <section class="section" id="how">
-    <div class="wrap">
+    <div class="wrap uc-head">
       <a class="back-link" href="#use-cases"><span aria-hidden="true">↑</span> Return to use cases</a>
+      <div class="section-head">
+        <div>
+          <p class="kicker">Patients &amp; caregivers</p>
+          <h2>How a wound moves through WoundEye</h2>
+        </div>
+        <p class="lede">A patient or carer photographs the wound at home. Workflow agents route it to a certified wound specialist, who makes every clinical decision — and the result comes back to the patient and carer in the app.</p>
+      </div>
+    </div>
+    <div class="wrap flow-wide uc-flow">
+<div class="flow flow-we" id="flow-patients" data-flow data-variant="woundeye">
+  <div class="flow-bar">
+    <div class="flow-steps" role="group" aria-label="Stages">
+      <button type="button" data-stage="0" aria-pressed="true">Whole loop</button>
+      <button type="button" data-stage="1">1. Capture</button>
+      <button type="button" data-stage="2">2. Worklist</button>
+      <button type="button" data-stage="3">3. Clinical review</button>
+      <button type="button" data-stage="4">4. Result</button>
+    </div>
+  </div>
+  <div class="flow-body">
+    <div class="flow-stage"></div>
+    <div class="flow-side">
+      <div class="flow-panel" aria-live="polite"><h3 class="panel-title"></h3><p class="panel-body"></p></div>
+      <div class="flow-counts">
+        <div><b data-count="captured">0</b>Photos sent from home</div>
+        <div><b data-count="read">0</b>On the specialist worklist</div>
+        <div><b data-count="confirmed">0</b>Specialist assessments</div>
+        <div class="res"><b data-count="results">0</b>Results back to home</div>
+      </div>
+      <div class="flow-rate">
+        <div class="row"><label for="flow-rate-patients">Photos per day</label><b data-rate-out>60</b></div>
+        <input id="flow-rate-patients" type="range" min="20" max="5000" step="10" value="60" data-rate>
+        <div class="row" style="margin-top:.75rem"><span data-day>Simulated day 1</span><span><button type="button" data-play>Pause</button> <button type="button" data-reset>Reset</button></span></div>
+      </div>
+    </div>
+  </div>
+  <div class="flow-legend">
+    <span><i class="l-raw"></i>Photo sent from home</span>
+    <span><i class="l-read"></i>Queued for the specialist by agents</span>
+    <span><i class="l-result"></i>Result returned to patient and carer</span>
+    <span class="flow-foot">Illustrative simulation, not client data. Select a stage or any box to read about it.</span>
+  </div>
+</div>
+    </div>
+
+    <div class="wrap">
       <div class="section-head">
         <div>
           <p class="kicker">How it works</p>
@@ -356,6 +283,76 @@
           <p>A plain-language summary arrives the same day, with care recommendations and one-tap escalation to your doctor.</p>
         </li>
       </ol>
+    </div>
+  </section>
+
+  <!-- AssureStage -->
+  <section class="section paper" id="assurestage">
+    <div class="wrap">
+      <div class="section-head">
+        <div>
+          <img class="as-logo" src="/images/flow/assurestage-logo.png" alt="AssureStage" width="220" height="60" loading="lazy">
+          <p class="kicker">The clinicians behind every answer</p>
+          <h2>AssureStage Clinical Wound Assessments</h2>
+        </div>
+        <div>
+          <p class="lede">AssureStage is Wound Solutions AI’s team of certified wound specialists. When a WoundEye photo arrives, it is an AssureStage specialist — not software — who looks at the wound and decides what it is and what happens next.</p>
+          <p class="lede">The same team reviews bedside assessments from WoundRounds in hospitals and facilities, catching staging errors, missing measurements and gaps before they reach a survey, a claim or a courtroom.</p>
+        </div>
+      </div>
+
+      <ol class="as-steps">
+        <li>
+          <h3>Reviews the photo and its site</h3>
+          <p>A certified wound specialist examines the photograph together with the exact location pinned on the body map.</p>
+        </li>
+        <li>
+          <h3>Determines type and stage</h3>
+          <p>The specialist decides what kind of wound it is and how advanced it is, and computes the PUSH healing score.</p>
+        </li>
+        <li>
+          <h3>Screens for infection</h3>
+          <p>The specialist screens the wound for signs of infection and flags any suspected infection in the assessment.</p>
+        </li>
+        <li>
+          <h3>Sets the follow-up</h3>
+          <p>The result goes back through WoundEye in plain language — what the wound is, what to do tonight, the signs that mean call 911, and the follow-up date.</p>
+        </li>
+      </ol>
+
+      <div class="as-photos">
+        <figure><img src="/images/as-capture.jpg" alt="A clinician in blue gloves photographs a patient's bandaged foot with a phone" width="360" height="240" loading="lazy"></figure>
+        <figure><img src="/images/as-stage.jpg" alt="A gloved clinician examines an open wound on the heel of a patient's foot" width="430" height="240" loading="lazy"></figure>
+        <figure><img src="/images/as-infection.jpg" alt="Swollen, reddened feet and ankles, with a hand holding one ankle" width="427" height="240" loading="lazy"></figure>
+        <figure><img src="/images/as-followup.jpg" alt="A clinician kneels to check a patient's bare foot at home" width="360" height="240" loading="lazy"></figure>
+      </div>
+
+      <div class="as-split">
+        <div class="as-col">
+          <p class="who">Workflow agents</p>
+          <h3>Handle the routing</h3>
+          <ul>
+            <li>Check each photo in and confirm it is usable</li>
+            <li>File it to the right body site</li>
+            <li>Add it to the specialist’s worklist and track it until reviewed</li>
+            <li>Send reminders and schedule follow-ups</li>
+          </ul>
+          <p class="as-note">They simplify, manage and scale the workflow — and make no clinical decisions.</p>
+        </div>
+        <div class="as-col as-human">
+          <p class="who">AssureStage specialists</p>
+          <h3>Make every clinical decision</h3>
+          <ul>
+            <li>Wound type and stage</li>
+            <li>PUSH healing score</li>
+            <li>Suspected infection</li>
+            <li>Follow-up plan</li>
+          </ul>
+          <p class="as-note">Every decision is theirs, and the record shows who decided, and when.</p>
+        </div>
+      </div>
+
+      <p class="source-note">Learn more about AssureStage at <a href="https://wounds-ai.com/solutions#wound-qa">wounds-ai.com</a>.</p>
     </div>
   </section>
 
@@ -492,8 +489,54 @@
 
   <!-- For clinicians -->
   <section class="section paper" id="clinicians">
-    <div class="wrap">
+    <div class="wrap uc-head">
       <a class="back-link" href="#use-cases"><span aria-hidden="true">↑</span> Return to use cases</a>
+      <div class="section-head">
+        <div>
+          <p class="kicker">Clinicians</p>
+          <h2>From worklist to signed assessment</h2>
+        </div>
+        <p class="lede">Agents handle intake, filing and follow-up reminders. Your worklist holds only the photos that need your clinical judgement — and every decision you make is recorded under your name.</p>
+      </div>
+    </div>
+    <div class="wrap flow-wide uc-flow">
+<div class="flow flow-we" id="flow-clinicians" data-flow data-variant="woundeye" data-audience="clinician" data-start="3">
+  <div class="flow-bar">
+    <div class="flow-steps" role="group" aria-label="Stages">
+      <button type="button" data-stage="0" aria-pressed="true">Whole loop</button>
+      <button type="button" data-stage="1">1. Capture</button>
+      <button type="button" data-stage="2">2. Worklist</button>
+      <button type="button" data-stage="3">3. Clinical review</button>
+      <button type="button" data-stage="4">4. Result</button>
+    </div>
+  </div>
+  <div class="flow-body">
+    <div class="flow-stage"></div>
+    <div class="flow-side">
+      <div class="flow-panel" aria-live="polite"><h3 class="panel-title"></h3><p class="panel-body"></p></div>
+      <div class="flow-counts">
+        <div><b data-count="captured">0</b>Photos received</div>
+        <div><b data-count="read">0</b>On your worklist</div>
+        <div><b data-count="confirmed">0</b>Assessments signed</div>
+        <div class="res"><b data-count="results">0</b>Results back to home</div>
+      </div>
+      <div class="flow-rate">
+        <div class="row"><label for="flow-rate-clinicians">Photos per day</label><b data-rate-out>60</b></div>
+        <input id="flow-rate-clinicians" type="range" min="20" max="5000" step="10" value="60" data-rate>
+        <div class="row" style="margin-top:.75rem"><span data-day>Simulated day 1</span><span><button type="button" data-play>Pause</button> <button type="button" data-reset>Reset</button></span></div>
+      </div>
+    </div>
+  </div>
+  <div class="flow-legend">
+    <span><i class="l-raw"></i>Photo sent from home</span>
+    <span><i class="l-read"></i>Queued for the specialist by agents</span>
+    <span><i class="l-result"></i>Result returned to patient and carer</span>
+    <span class="flow-foot">Illustrative simulation, not client data. Select a stage or any box to read about it.</span>
+  </div>
+</div>
+    </div>
+
+    <div class="wrap">
       <div class="split-photo">
         <figure class="photo">
           <img src="/images/photo-hero-clinicians.webp" alt="Clinicians reviewing wound documentation on a tablet" width="1400" height="841" loading="lazy">
@@ -524,8 +567,62 @@
 
   <!-- Markets -->
   <section class="section" id="markets">
-    <div class="wrap">
+    <div class="wrap uc-head">
       <a class="back-link" href="#use-cases"><span aria-hidden="true">↑</span> Return to use cases</a>
+      <div class="section-head">
+        <div>
+          <p class="kicker">Employers &amp; health plans</p>
+          <h2>Two paths for the same wound</h2>
+        </div>
+        <p class="lede">Without WoundEye, a small wound at home often goes unseen until it becomes an admission, a surgery or an amputation. With WoundEye, a clinician sees it the same day, while it is still small. Switch between the paths to compare.</p>
+      </div>
+    </div>
+    <div class="wrap flow-wide uc-flow">
+<div class="flow flow-ma" id="flow-plans" data-flow data-variant="ma">
+  <div class="flow-bar">
+    <div class="flow-steps" role="group" aria-label="Stages">
+      <button type="button" data-stage="0" aria-pressed="true">Both paths</button>
+      <button type="button" data-stage="1">1. Where it starts</button>
+      <button type="button" data-stage="2">2. First look</button>
+      <button type="button" data-stage="3">3. Assessment</button>
+      <button type="button" data-stage="4">4. Outcome</button>
+    </div>
+    <div class="flow-modes" role="group" aria-label="Path">
+      <button type="button" data-mode="late" aria-pressed="false">Seen late</button>
+      <button type="button" data-mode="early" aria-pressed="false">Seen same day</button>
+      <button type="button" data-mode="compare" aria-pressed="true">Compare</button>
+    </div>
+  </div>
+  <div class="flow-body">
+    <div class="flow-stage"></div>
+    <div class="flow-side">
+      <div class="flow-panel" aria-live="polite"><h3 class="panel-title"></h3><p class="panel-body"></p></div>
+      <div class="flow-counts">
+        <div><b data-count="captured">0</b>New wounds at home</div>
+        <div><b data-count="read">0</b>Unseen between visits</div>
+        <div class="flag"><b data-count="flagged">0</b>Reached care as a costly episode</div>
+        <div><b data-count="confirmed">0</b>Assessed by a clinician the same day</div>
+        <div><b data-count="record">0</b>In the plan&rsquo;s record</div>
+      </div>
+      <div class="flow-rate">
+        <div class="row"><label for="flow-rate-plans">New wounds per day</label><b data-rate-out>60</b></div>
+        <input id="flow-rate-plans" type="range" min="10" max="5000" step="10" value="60" data-rate>
+        <div class="row" style="margin-top:.75rem"><span data-day>Simulated day 1</span><span><button type="button" data-play>Pause</button> <button type="button" data-reset>Reset</button></span></div>
+      </div>
+    </div>
+  </div>
+  <div class="flow-legend">
+    <span><i class="l-raw"></i>A new wound at home</span>
+    <span><i class="l-wait"></i>Waiting, unseen</span>
+    <span><i class="l-flag"></i>Seen late, larger and harder to treat</span>
+    <span><i class="l-ok"></i>Assessed by a clinician the same day</span>
+    <span class="flow-foot">Illustrative simulation, not client data: each wound is shown on both paths. Select a stage or any box to read about it.</span>
+  </div>
+</div>
+    </div>
+    <p class="wrap source-note">Figures in this simulation: 10.5 million Medicare beneficiaries with a chronic wound;<sup class="fn"><a href="#ref-1">1</a></sup> 46% of Medicare patients referred to home health care at discharge receive no visit within 14 days;<sup class="fn"><a href="#ref-11">11</a></sup> a diabetic foot ulcer adds about $11,710 a year (Medicare) and $16,883 (private insurance) in costs.<sup class="fn"><a href="#ref-7">7</a></sup></p>
+
+    <div class="wrap">
       <div class="section-head">
         <div>
           <p class="kicker">Who it's for</p>
@@ -736,6 +833,7 @@
         <li id="ref-8">KFF. 2025 Employer Health Benefits Survey. October 2025. <a href="https://www.kff.org/health-costs/issue-brief/2025-employer-health-benefits-survey/">kff.org</a></li>
         <li id="ref-9">KFF. Medicare Advantage in 2026: enrollment update and key trends. 2026. <a href="https://www.kff.org/medicare/fact-sheet/medicare-advantage/">kff.org</a></li>
         <li id="ref-10">Agency for Healthcare Research and Quality. Preventing pressure ulcers in hospitals: implementation guide, Appendix F (national average cost per stage 3+ hospital-acquired pressure injury). <a href="https://www.ahrq.gov/patient-safety/settings/hospital/resource/pressureinjury/guide/apf.html">ahrq.gov</a></li>
+        <li id="ref-11">Li J, Qi M, Werner RM. Assessment of receipt of the first home health care visit after hospital discharge among older adults. <i>JAMA Netw Open.</i> 2020;3(9):e2015470. <a href="https://doi.org/10.1001/jamanetworkopen.2020.15470">doi:10.1001/jamanetworkopen.2020.15470</a></li>
       </ol>
     </div>
   </section>
