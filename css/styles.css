@@ -749,3 +749,9 @@ main > .hero ~ section:not(.flow-intro) { scroll-margin-top: calc(4.5rem + 1px);
 .faq details ul { color: var(--ink-2); margin: -.5rem 0 1rem; padding-left: 1.25rem; max-width: 46rem; }
 .faq details li { margin-bottom: .3rem; }
 .faq details p strong { color: var(--ink); }
+
+/* Return to use cases */
+#use-cases { scroll-margin-top: 7rem; }
+.back-link { display: inline-flex; align-items: center; gap: .4rem; margin-bottom: 1.5rem; font: 700 .85rem var(--sans); color: var(--ink-2); text-decoration: none; border: 1px solid var(--rule); border-radius: 999px; padding: .35rem .85rem; background: var(--paper); }
+.back-link:hover { color: var(--paper); background: var(--ink); border-color: var(--ink); }
+.split-photo + .back-link, .wrap > .back-link { grid-column: 1 / -1; }
