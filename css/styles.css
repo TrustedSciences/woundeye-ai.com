@@ -766,3 +766,26 @@ section > .source-note.wrap { margin-top: -2rem; margin-bottom: 2.5rem; display:
 .flow .node-core text, .flow .node-core .n-label { fill: #FFFFFF; }
 .flow .node-core .n-sub { fill: #DCE6FA; }
 .flow .core-ring, .flow .core-pulse { stroke: #5C8DE4; }
+
+/* ---------- Animations: AssureStage navy background ---------- */
+.flow { --navy: #0B2C63; background: var(--navy); border-color: #061C42; }
+.flow-bar, .flow-side, .flow-legend { border-color: #24508F; }
+.flow button { border-color: #3866AE; }
+.flow .edge { stroke: #3561A6; }
+.flow .node .shape, .flow .node-out .shape { fill: #133A7A; stroke: #7E9FD6; }
+.flow .node-late .shape { fill: rgba(224,138,116,.1); }
+.flow .pt-raw { fill: var(--navy); }
+.flow .pt-read, .flow .pt-ok, .flow .pt-flag, .flow .pt-result { stroke: var(--navy); }
+.flow-legend .l-ok { box-shadow: 0 0 0 2px #0B2C63, 0 0 0 3.5px #F7F2E8; }
+.flow-legend, .flow-caps text { color: #B5C3DE; }
+.flow .flow-caps text { fill: #93A8CF; }
+.flow .n-sub { fill: #B5C3DE; }
+.flow .node-core .shape { fill: #1A5FD6; stroke: #A9C3F2; }
+.flow .core-ring, .flow .core-pulse { stroke: #7FA6EE; }
+.as-photos.as-wounds { grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 1rem; }
+.as-wounds figcaption { font: .82rem/1.4 var(--sans); color: var(--ink-2); margin-top: .5rem; }
+@media (max-width: 960px) { .as-photos.as-wounds { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+@media (max-width: 600px) { .as-photos.as-wounds { grid-template-columns: 1fr 1fr; } }
+.flow .node-prod .shape { fill: #F7F2E8; stroke: #F7F2E8; }
+.flow .node-prod .n-sub { fill: #465063; }
+.flow .node-late .shape { fill: rgba(224,138,116,.1); stroke: #E08A74; }
