@@ -787,3 +787,5 @@ section > .source-note.wrap { margin-top: -2rem; margin-bottom: 2.5rem; display:
 .flow .node-prod .n-sub { fill: #465063; }
 .flow .node-core .shape { fill: #1A55C4; stroke: #8FB0EE; }
 .flow .node-late .shape { fill: rgba(224,138,116,.1); stroke: #E08A74; }
+.as-photos.as-wounds { grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 1.25rem; }
+@media (max-width: 960px) { .as-photos.as-wounds { grid-template-columns: 1fr 1fr; } }
