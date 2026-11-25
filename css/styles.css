@@ -697,3 +697,52 @@ main > .hero ~ section:not(.flow-intro) { scroll-margin-top: calc(4.5rem + 1px);
 .as-photos img { width: 100%; aspect-ratio: 3 / 2; object-fit: cover; border: 1px solid var(--rule); filter: saturate(.85) sepia(.05); display: block; }
 @media (max-width: 960px) { .as-photos { grid-template-columns: 1fr 1fr; } }
 .as-photos img { height: auto; }
+
+/* ---------- Hero layout v3: cards beside phones, flow below ---------- */
+.hero-v2-grid { grid-template-columns: minmax(0, .95fr) minmax(0, 1.05fr); }
+.hero-stage { height: 37rem; }
+.hero-stage .phone { width: 13rem; right: auto; bottom: auto; }
+.stage-back  { left: 0;    top: 3rem; }
+.stage-front { left: 8rem; top: 0; }
+.float-card  { right: auto; bottom: auto; }
+.card-map    { left: 22.5rem; top: 5.5rem; }
+.card-review { left: 22.5rem; top: 14.5rem; }
+.card-flow   { left: 1rem;  top: 33.25rem; }
+
+/* entrance / exit directions */
+.hero-stage.js-loop .card-review { transform: translateX(-36px); }
+.hero-stage.js-loop .card-flow   { transform: translateY(-28px); }
+.hero-stage.js-loop .card-map.is-in,
+.hero-stage.js-loop .card-review.is-in,
+.hero-stage.js-loop .card-flow.is-in { transform: translate(0, 0); }
+.hero-stage.js-loop .card-review.is-out { transform: translateX(36px); }
+.hero-stage.js-loop .card-flow.is-out   { transform: translateY(28px); }
+
+@media (max-width: 1240px) {
+  .hero-stage { height: 33rem; }
+  .hero-stage .phone { width: 11.5rem; }
+  .stage-front { left: 7rem; }
+  .card-map, .card-review { left: 19.5rem; }
+  .card-review { top: 13rem; }
+  .card-flow { top: 29.5rem; left: 0; }
+}
+@media (max-width: 1060px) {
+  .hero-v2-grid { grid-template-columns: 1fr; }
+  .hero-v2 .hero-copy { max-width: none; }
+  .hero-stage { max-width: 36rem; width: 100%; margin: 0 auto; }
+}
+@media (max-width: 600px) {
+  .hero-stage { height: 37rem; max-width: 22rem; }
+  .hero-stage .phone { width: 10rem; }
+  .stage-back { left: 0; top: 2rem; }
+  .stage-front { left: 6.5rem; top: 0; }
+  .card-map    { left: 0; top: 24rem; }
+  .card-review { left: 0; top: 31rem; }
+  .card-flow   { display: none; }
+}
+.float-card { width: max-content; max-width: none; }
+.card-review div span { white-space: nowrap; }
+@media (max-width: 1240px) { .stage-front { left: 6.5rem; } .card-map, .card-review { left: 19rem; } .card-flow { top: 30.5rem; } .hero-stage { height: 34rem; } }
+@media (max-width: 1060px) { .hero-stage { max-width: 35rem; } }
+@media (max-width: 600px) { .card-map { left: 0; top: 25rem; } .card-review { left: 0; top: 31.5rem; } .hero-stage { height: 37rem; } }
+@media (max-width: 600px) { .card-review { top: 32.25rem; } .hero-stage { height: 38rem; } }
