@@ -407,8 +407,8 @@ sup.fn a:hover { text-decoration: underline; }
 
 .hero-stage { position: relative; height: 34rem; }
 .hero-stage .phone { position: absolute; width: 15.5rem; border-color: #3A4762; border-width: 6px; border-color: #0F1522; border-radius: 30px; }
-.stage-back { right: 13rem; top: 2.5rem; transform: rotate(-5deg); opacity: .92; }
-.stage-front { right: 1.5rem; top: 0; transform: rotate(3deg); box-shadow: 0 40px 70px -30px rgba(0,0,0,.75); z-index: 2; }
+.stage-back { right: 13rem; top: 2.5rem; }
+.stage-front { right: 1.5rem; top: 0; box-shadow: 0 40px 70px -30px rgba(0,0,0,.75); z-index: 2; }
 
 .float-card { position: absolute; z-index: 3; background: var(--paper); color: var(--ink); border: 1px solid var(--rule); border-radius: 10px; box-shadow: 0 22px 40px -18px rgba(0,0,0,.6); font-family: var(--sans); }
 .card-map { left: -1rem; top: 1.5rem; display: flex; align-items: center; gap: .75rem; padding: .6rem .9rem .6rem .6rem; }
@@ -448,3 +448,36 @@ sup.fn a:hover { text-decoration: underline; }
 .card-map { top: -.5rem; left: -2rem; }
 @media (max-width: 1100px) { .card-flow li { font-size: .74rem; padding: 0 .2rem; } }
 @media (max-width: 900px) { .stage-back { top: 2rem; } .card-map { top: auto; left: -.25rem; } }
+
+/* ---------- Hero animation (no rotation or skew) ---------- */
+.stage-back, .stage-front { transform: none; }
+.stage-back { opacity: 1; }
+
+@keyframes rise-in { from { opacity: 0; transform: translateY(28px); } to { opacity: 1; transform: translateY(0); } }
+@keyframes slide-in-left { from { opacity: 0; transform: translateX(-24px); } to { opacity: 1; transform: translateX(0); } }
+@keyframes fade-up { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: translateY(0); } }
+@keyframes pill-glow { 0%, 100% { box-shadow: 0 0 0 0 rgba(26,78,153,0); } 50% { box-shadow: 0 0 0 6px rgba(26,78,153,.18); } }
+@keyframes check-glow { 0%, 100% { box-shadow: 0 0 0 0 rgba(46,125,79,0); } 50% { box-shadow: 0 0 0 7px rgba(46,125,79,.22); } }
+@keyframes step-on { 0%, 22% { background: var(--gold); color: var(--ink); } 25%, 100% { background: var(--ink); color: var(--paper); } }
+
+.hero-v2 .hero-copy > * { animation: fade-up .7s ease-out both; }
+.hero-v2 .hero-copy > :nth-child(2) { animation-delay: .08s; }
+.hero-v2 .hero-copy > :nth-child(3) { animation-delay: .16s; }
+.hero-v2 .hero-copy > :nth-child(4) { animation-delay: .24s; }
+.hero-v2 .hero-copy > :nth-child(5) { animation-delay: .32s; }
+.hero-v2 .hero-copy > :nth-child(6) { animation-delay: .4s; }
+.hero-v2 .hero-copy > :nth-child(7) { animation-delay: .48s; }
+
+.stage-back  { animation: rise-in .9s cubic-bezier(.2,.7,.2,1) .35s both; }
+.stage-front { animation: rise-in .9s cubic-bezier(.2,.7,.2,1) .65s both; }
+.card-map    { animation: slide-in-left .7s ease-out 1.3s both; }
+.card-review { animation: slide-in-left .7s ease-out 2s both; }
+.card-flow   { animation: fade-up .7s ease-out 2.6s both; }
+
+.card-map .fc-pill { animation: pill-glow 2.4s ease-in-out 2.1s infinite; }
+.card-review .fc-check { animation: check-glow 2.4s ease-in-out 2.8s infinite; }
+.card-flow li span { animation: step-on 8s linear infinite; }
+.card-flow li:nth-child(1) span { animation-delay: 3.3s; }
+.card-flow li:nth-child(2) span { animation-delay: 5.3s; }
+.card-flow li:nth-child(3) span { animation-delay: 7.3s; }
+.card-flow li:nth-child(4) span { animation-delay: 9.3s; }
