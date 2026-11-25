@@ -746,3 +746,6 @@ main > .hero ~ section:not(.flow-intro) { scroll-margin-top: calc(4.5rem + 1px);
 @media (max-width: 1060px) { .hero-stage { max-width: 35rem; } }
 @media (max-width: 600px) { .card-map { left: 0; top: 25rem; } .card-review { left: 0; top: 31.5rem; } .hero-stage { height: 37rem; } }
 @media (max-width: 600px) { .card-review { top: 32.25rem; } .hero-stage { height: 38rem; } }
+.faq details ul { color: var(--ink-2); margin: -.5rem 0 1rem; padding-left: 1.25rem; max-width: 46rem; }
+.faq details li { margin-bottom: .3rem; }
+.faq details p strong { color: var(--ink); }
