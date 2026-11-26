@@ -80,3 +80,23 @@ if (reveal) {
     }, { threshold: 0.35 }).observe(stage);
   } else { running = true; run(); }
 })();
+
+// "Who it's for" dropdown
+document.querySelectorAll('.nav-drop').forEach(function (d) {
+  var b = d.querySelector('button');
+  b.addEventListener('click', function (e) {
+    e.stopPropagation();
+    var open = d.classList.toggle('open');
+    b.setAttribute('aria-expanded', open ? 'true' : 'false');
+  });
+});
+document.addEventListener('click', function () {
+  document.querySelectorAll('.nav-drop.open').forEach(function (d) {
+    d.classList.remove('open'); d.querySelector('button').setAttribute('aria-expanded', 'false');
+  });
+});
+document.addEventListener('keydown', function (e) {
+  if (e.key === 'Escape') document.querySelectorAll('.nav-drop.open').forEach(function (d) {
+    d.classList.remove('open'); var b = d.querySelector('button'); b.setAttribute('aria-expanded', 'false'); b.focus();
+  });
+});

@@ -29,3 +29,22 @@ pull requests get their own preview URL.
 ## Local preview
 
 Open `index.html` in a browser, or run `npx serve .` from this folder.
+
+## Pages and how they are built
+
+The site has a short home page plus separate pages for its key areas:
+
+| Page | URL |
+|---|---|
+| Home | `/` |
+| How it works | `/how-it-works/` |
+| Interactive body map | `/body-map/` |
+| AssureStage | `/assurestage/` |
+| Patients & caregivers | `/patients-caregivers/` |
+| Clinicians | `/clinicians/` |
+| Employers & health plans | `/employers-health-plans/` |
+| References | `/references/` |
+
+Each page's content lives in `_build/pages/<page>.html`. The shared header, menu,
+"Return" links, Explore cards and footer live in `_build/build.py`. After editing,
+run `python3 _build/build.py` from the repo root and commit the generated HTML.

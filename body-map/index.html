@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Interactive body map | WoundEye</title>
+  <meta name="description" content="Tap the body, open the close-up and pin the exact wound site, so every wound is tracked visit after visit.">
+  <meta name="theme-color" content="#ECE3D1">
+  <link rel="canonical" href="https://woundeye-ai.com/body-map/">
+  <link rel="icon" href="/images/logo.png" type="image/png">
+  <meta property="og:title" content="Interactive body map | WoundEye">
+  <meta property="og:description" content="Tap the body, open the close-up and pin the exact wound site, so every wound is tracked visit after visit.">
+  <meta property="og:image" content="https://woundeye-ai.com/images/photo-hero-feet.webp">
+  <meta property="og:url" content="https://woundeye-ai.com/body-map/">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&family=Caladea:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body id="top" class="page-body-map">
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="/" aria-label="WoundEye home">
+      <img src="/images/logo.png" alt="" width="32" height="32">
+      <span class="brand-name">Wound<em>Eye</em></span>
+    </a>
+    <button class="nav-toggle" aria-expanded="false" aria-controls="site-nav">Menu</button>
+    <nav class="nav" id="site-nav" aria-label="Main">
+      <a href="/how-it-works/">How it works</a>
+      <a href="/body-map/" aria-current="page">Body map</a>
+      <a href="/assurestage/">AssureStage</a>
+      <div class="nav-drop">
+        <button type="button" aria-expanded="false" aria-haspopup="true">Who it&rsquo;s for <svg class="caret" viewBox="0 0 10 10" aria-hidden="true"><path d="M1.5 3.5 5 7l3.5-3.5" fill="none" stroke="currentColor" stroke-width="1.5"/></svg></button>
+        <div class="drop-panel">
+          <a href="/patients-caregivers/">Patients &amp; caregivers</a>
+          <a href="/clinicians/">Clinicians</a>
+          <a href="/employers-health-plans/">Employers &amp; health plans</a>
+          <a class="drop-all" href="/#use-cases">All use cases</a>
+        </div>
+      </div>
+      <a href="/#why">Why it matters</a>
+      <a href="/#faq">FAQ</a>
+      <a class="btn-ink" href="https://app.woundeye.com/">Sign in</a>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+  <div class="page-top">
+    <div class="wrap page-top-row">
+      <a class="back-link" href="/"><span aria-hidden="true">←</span> Return to main menu</a>
+    </div>
+  </div>
+
+  <!-- Body map -->
+  <section class="section" id="bodymap">
+    <div class="wrap">
+      <div class="section-head">
+        <div>
+          <p class="kicker">Interactive body map</p>
+          <h2>Every wound gets an exact address</h2>
+        </div>
+        <p class="lede">After the photo, WoundEye asks one question: <em>where is it?</em> Tap the body, open the close-up, and pin the exact spot. The site is saved with the photo, so the same wound can be found, compared and tracked on every visit — and a new wound on the same foot is never confused with an old one.</p>
+      </div>
+
+      <ol class="map-steps">
+        <li>
+          <figure class="plate"><img src="/images/map-body-front.jpg" alt="Whole-body figure, front view, divided into tappable regions" width="314" height="626" loading="lazy"></figure>
+          <h3>Tap the body</h3>
+          <p>Choose a male or female figure and turn it — front, back, left or right side. Tap the region: head and neck, torso, hips and buttocks, arms, hands, thighs, lower legs or feet.</p>
+        </li>
+        <li>
+          <figure class="plate"><img src="/images/map-foot-top.jpg" alt="Close-up of the top of the left foot with the forefoot highlighted" width="314" height="626" loading="lazy"></figure>
+          <h3>Open the close-up</h3>
+          <p>The region zooms in with its own views — top or sole for a foot; front, outer side, back or inner side for a lower leg — and named anatomical areas to choose from.</p>
+        </li>
+        <li>
+          <figure class="plate"><img src="/images/map-heel-sole.jpg" alt="Sole of the left foot with the heel highlighted and a red pin on the wound site" width="314" height="626" loading="lazy"></figure>
+          <h3>Pin the exact spot</h3>
+          <p>Tap where the wound is. A pin drops, the area is named — <b>“Selected: Lt Heel”</b> — and the location is stored with the record.</p>
+        </li>
+      </ol>
+
+      <div class="map-demo" id="map-demo">
+        <div class="map-demo-head">
+          <p class="kicker">See it in the app</p>
+          <h3>One photo, one pinned site</h3>
+          <p>A heel wound photo, pinned on the sole close-up. Choose another site to see how the map handles different parts of the leg and foot.</p>
+          <div class="map-tabs" role="tablist" aria-label="Example wound sites">
+            <button role="tab" aria-selected="true" data-img="/images/map-heel-sole.jpg" data-label="Lt Heel" data-view="Left foot · Sole" data-alt="Sole of the left foot with a pin on the heel">Heel</button>
+            <button role="tab" aria-selected="false" data-img="/images/map-foot-top.jpg" data-label="Lt Forefoot (Top)" data-view="Left foot · Top" data-alt="Top of the left foot with a pin on the forefoot">Forefoot</button>
+            <button role="tab" aria-selected="false" data-img="/images/map-ankle-inner.jpg" data-label="Left Medial Malleolus" data-view="Left lower leg · Inner side" data-alt="Inner side of the left lower leg with a pin on the inner ankle bone">Inner ankle</button>
+            <button role="tab" aria-selected="false" data-img="/images/map-calf-inner.jpg" data-label="Left Medial Calf" data-view="Left lower leg · Inner side" data-alt="Inner side of the left lower leg with the calf highlighted and pinned">Inner calf</button>
+          </div>
+        </div>
+        <div class="map-demo-body">
+          <figure class="wound-photo">
+            <div class="reveal" id="wound-reveal">
+              <img src="/images/wound-heel-example.jpg" alt="Clinical photograph of an open wound on a heel" width="561" height="356" loading="lazy">
+              <button type="button" class="reveal-btn">Show clinical photo</button>
+            </div>
+            <figcaption>Wound photo · step 2 of 4</figcaption>
+          </figure>
+          <div class="map-link" aria-hidden="true">→</div>
+          <figure class="plate map-view">
+            <img id="map-img" src="/images/map-heel-sole.jpg" alt="Sole of the left foot with a pin on the heel" width="314" height="626">
+            <figcaption><span class="selected" id="map-label">Selected: Lt Heel</span><span id="map-view">Left foot · Sole</span></figcaption>
+          </figure>
+        </div>
+      </div>
+
+      <dl class="map-facts">
+        <div><dt>2</dt><dd>body figures, male and female</dd></div>
+        <div><dt>4</dt><dd>whole-body views: front, back, left and right side</dd></div>
+        <div><dt>11</dt><dd>named areas on the sole of each foot, from heel to each metatarsal head and toe</dd></div>
+        <div><dt>1 tap</dt><dd>to pin the site — stored with every photo, visit after visit</dd></div>
+      </dl>
+      <p class="source-note">Screens captured from the live WoundEye app. New 3D-rendered figures arrive with V3.</p>
+    </div>
+  </section>
+
+  <section class="section explore" id="explore">
+    <div class="wrap">
+      <div class="section-head">
+        <div>
+          <p class="kicker">Keep exploring</p>
+          <h2>More about WoundEye</h2>
+        </div>
+        
+      </div>
+      <div class="feature-grid">
+        <a class="feature-card" href="/how-it-works/">
+          <div class="fc-media fc-phone"><img src="/images/screen-carer-home.jpg" alt="" loading="lazy"></div>
+          <div class="fc-body">
+            <p class="kicker">How it works</p>
+            <h3>From your mobile to a clinician’s answer</h3>
+            <p>Capture, locate, clinical review and same-day guidance — plus the platform and integrations.</p>
+            <span class="fc-more">Explore <span aria-hidden="true">→</span></span>
+          </div>
+        </a>
+        <a class="feature-card" href="/assurestage/">
+          <div class="fc-media fc-logo"><img src="/images/flow/assurestage-logo.png" alt="" loading="lazy"></div>
+          <div class="fc-body">
+            <p class="kicker">AssureStage</p>
+            <h3>The clinicians behind every answer</h3>
+            <p>Certified wound specialists determine type and stage, screen for infection and set the follow-up.</p>
+            <span class="fc-more">Explore <span aria-hidden="true">→</span></span>
+          </div>
+        </a>
+      </div>
+      <p class="uc-cards-head">Built for</p>
+      <div class="uc-cards">
+        <a class="uc-card" href="/patients-caregivers/"><span class="uc-label">Patients &amp; caregivers</span><span class="uc-text">Send a photo from home and get a specialist’s answer the same day.</span><span class="fc-more">See the workflow <span aria-hidden="true">→</span></span></a>
+        <a class="uc-card" href="/clinicians/"><span class="uc-label">Clinicians</span><span class="uc-text">A worklist of photos that need your judgement — and a signed record of every decision.</span><span class="fc-more">See the workflow <span aria-hidden="true">→</span></span></a>
+        <a class="uc-card" href="/employers-health-plans/"><span class="uc-label">Employers &amp; health plans</span><span class="uc-text">Catch wounds while they are small, before they become costly episodes.</span><span class="fc-more">See the workflow <span aria-hidden="true">→</span></span></a>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta-band">
+    <div class="wrap">
+      <h2>Bring expert wound assessment to wherever the wound is.</h2>
+      <div class="btn-row">
+        <a class="btn btn-ink" href="mailto:access@woundeye.com">Request access</a>
+        <a class="btn btn-line" href="https://app.woundeye.com/">Sign in</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <a class="brand" href="/"><img src="/images/logo.png" alt="" width="32" height="32"><span class="brand-name">Wound<em>Eye</em></span></a>
+        <p class="mt-1">Timely human wound care advice — capture, assessment and tracking on any phone.</p>
+      </div>
+      <div>
+        <h4>Explore</h4>
+        <ul>
+          <li><a href="/how-it-works/">How it works</a></li>
+          <li><a href="/body-map/">Interactive body map</a></li>
+          <li><a href="/assurestage/">AssureStage</a></li>
+          <li><a href="/#security">Trust &amp; security</a></li>
+          <li><a href="/references/">References</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Who it&rsquo;s for</h4>
+        <ul>
+          <li><a href="/patients-caregivers/">Patients &amp; caregivers</a></li>
+          <li><a href="/clinicians/">Clinicians</a></li>
+          <li><a href="/employers-health-plans/">Employers &amp; health plans</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Get started</h4>
+        <ul>
+          <li><a href="https://app.woundeye.com/">Sign in</a></li>
+          <li><a href="mailto:access@woundeye.com">access@woundeye.com</a></li>
+          <li><a href="https://www.wounds-ai.com">Wound Solutions AI</a></li>
+        </ul>
+      </div>
+    </div>
+    <p class="foot-legal">WoundEye is a wellness product. It does not diagnose, treat, cure or prevent any disease, and it is not a substitute for professional medical advice. Always consult a qualified clinician about a wound.</p>
+    <p class="foot-legal">© <span id="year">2026</span> Wound Solutions AI. Site by Simon Lee &amp; Associates LLC</p>
+  </div>
+</footer>
+
+<script src="/js/main.js"></script>
+</body>
+</html>
