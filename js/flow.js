@@ -1,6 +1,8 @@
 // How WoundRounds, precision routing and AssureStage Clinical Wound Assessments flow together.
 // Self-contained: needs a <div id="wsa-flow"> with the markup from platform.html.
 (function () {
+// Folder that holds js/flow.js, so logo paths work from any page depth or subfolder.
+var SITE_BASE = (function () { var c = document.currentScript; return c && c.src ? c.src.replace(/js\/flow\.js(\?.*)?$/, '') : ''; })();
 var FLOW_N = 0;
 function initFlow(root) {
   var uid = 'f' + (FLOW_N++);
@@ -450,10 +452,10 @@ function initFlow(root) {
   var LOGOS = {
     wr:  { src: 'assets/img/woundrounds-logo.png', ar: 387 / 52 },
     wrn: { src: 'assets/img/woundrounds-logo.png', ar: 387 / 52 },
-    we:  { src: '/images/flow/woundeye-logo.png', ar: 284 / 46 },
-    weh: { src: '/images/flow/woundeye-logo.png', ar: 284 / 46 },
-    cap: { src: '/images/flow/woundeye-logo.png', ar: 284 / 46 },
-    cwa: { src: '/images/flow/assurestage-logo.png', ar: 1000 / 293, tall: true }
+    we:  { src: SITE_BASE + 'images/flow/woundeye-logo.png', ar: 284 / 46 },
+    weh: { src: SITE_BASE + 'images/flow/woundeye-logo.png', ar: 284 / 46 },
+    cap: { src: SITE_BASE + 'images/flow/woundeye-logo.png', ar: 284 / 46 },
+    cwa: { src: SITE_BASE + 'images/flow/assurestage-logo.png', ar: 1000 / 293, tall: true }
   };
   var NODE_NOTES = {
     hb: 'Members already receiving care at home, where a wound is usually first noticed by family or a home-health aide.',

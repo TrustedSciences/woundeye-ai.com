@@ -1,17 +1,26 @@
 #!/usr/bin/env python3
 """Build the WoundEye site.
 
-Each page's main content lives in _build/pages/<slug>.html. This script wraps
+Each page's main content lives in build/pages/<slug>.html. This script wraps
 it in the shared header, menu and footer and writes the published HTML:
-  home -> /index.html, every other page -> /<slug>/index.html
+  home -> index.html, 404 -> 404.html, every other page -> <slug>/index.html
+It also writes sitemap.xml.
 
-Run from the repo root:  python3 _build/build.py
+All internal links and asset paths in the output are relative, so the site
+works from the top level of a domain or from any subfolder. Write them in the
+page files as root paths (for example /images/logo.png or /body-map/); the
+build converts them.
+
+Run from the site folder:  python3 build/build.py
+Needs Python 3.8 or later and nothing else (standard library only).
 """
 import os
+import re
 
-ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-PAGES = os.path.join(ROOT, '_build', 'pages')
-SITE = 'https://woundeye-ai.com'
+HERE = os.path.dirname(os.path.abspath(__file__))
+ROOT = os.path.dirname(HERE)
+PAGES = os.path.join(HERE, 'pages')
+SITE = 'https://www.woundeye-ai.com'
 
 USE_CASES = [
     ('patients-caregivers', 'Patients &amp; caregivers'),
@@ -43,7 +52,14 @@ META = {
                                'Two paths for the same wound: seen late at high cost, or seen the same day with WoundEye.',
                                'who', 'uses', True),
     'references': ('References | WoundEye', 'Sources for the figures used on the WoundEye site.', None, 'main', False),
+    '404': ('Page not found | WoundEye', 'The page you were looking for has moved or does not exist.', None, None, False),
 }
+
+CURRENT = ' aria-current="page"'
+
+
+def cur(on):
+    return CURRENT if on else ''
 
 FEATURES = [
     ('how-it-works', 'How it works', 'From your mobile to a clinician’s answer',
@@ -69,7 +85,7 @@ def nav(current_key, slug):
         return f'      <a href="{href}"{cur}>{label}</a>'
     who_cur = ' current' if current_key == 'who' else ''
     drop = '\n'.join(
-        f'          <a href="/{s}/"{" aria-current=\"page\"" if s == slug else ""}>{n}</a>'
+        '          <a href="/%s/"%s>%s</a>' % (s, cur(s == slug), n)
         for s, n in USE_CASES)
     return f'''    <nav class="nav" id="site-nav" aria-label="Main">
 {item('/how-it-works/', 'How it works', 'how')}
@@ -91,7 +107,7 @@ def nav(current_key, slug):
 def page_top(slug, back):
     if back == 'uses':
         tabs = '\n'.join(
-            f'        <a href="/{s}/"{" aria-current=\"page\"" if s == slug else ""}>{n}</a>' for s, n in USE_CASES)
+            '        <a href="/%s/"%s>%s</a>' % (s, cur(s == slug), n) for s, n in USE_CASES)
         return f'''  <div class="page-top">
     <div class="wrap page-top-row">
       <a class="back-link" href="/#use-cases"><span aria-hidden="true">←</span> Return to use cases</a>
@@ -204,10 +220,13 @@ FOOTER = '''<footer class="site-footer">
 
 def build(slug):
     title, desc, key, back, anim = META[slug]
-    body = open(os.path.join(PAGES, slug + '.html')).read().rstrip()
+    with open(os.path.join(PAGES, slug + '.html'), encoding='utf-8') as f:
+        body = f.read().rstrip()
     url = SITE + ('/' if slug == 'home' else f'/{slug}/')
     if slug == 'home':
         body = body.replace('<!--EXPLORE-->', explore(home=True))
+    elif slug == '404':
+        pass
     else:
         tail = '' if slug == 'references' else '\n\n' + explore(exclude=slug) + '\n\n' + CTA
         body = page_top(slug, back) + '\n' + body + tail
@@ -255,12 +274,52 @@ def build(slug):
 </body>
 </html>
 '''
-    out = os.path.join(ROOT, 'index.html') if slug == 'home' else os.path.join(ROOT, slug, 'index.html')
+    if slug == 'home':
+        out, depth = os.path.join(ROOT, 'index.html'), 0
+    elif slug == '404':
+        # Hosts show the 404 page at whatever address was mistyped, so it keeps
+        # root paths (/css/styles.css) instead of relative ones.
+        out, depth = os.path.join(ROOT, '404.html'), None
+    else:
+        out, depth = os.path.join(ROOT, slug, 'index.html'), 1
+    if depth is not None:
+        html = relative(html, depth)
     os.makedirs(os.path.dirname(out), exist_ok=True)
-    open(out, 'w').write(html)
+    # Always UTF-8 with Unix line endings, on every operating system.
+    with open(out, 'w', encoding='utf-8', newline='\n') as f:
+        f.write(html)
+    return out
+
+
+ROOT_PATH = re.compile(r'(\b(?:href|src)=")/(?!/)([^"]*)"')
+
+
+def relative(html, depth):
+    """Turn root paths like /images/x.png into paths relative to the page."""
+    prefix = '../' * depth
+
+    def fix(m):
+        path = prefix + m.group(2)
+        if path == '':
+            path = './'
+        elif path.startswith('#'):
+            path = './' + path
+        return m.group(1) + path + '"'
+    return ROOT_PATH.sub(fix, html)
+
+
+def sitemap():
+    urls = [SITE + '/'] + [SITE + '/' + s + '/' for s in META if s not in ('home', '404')]
+    body = ''.join('  <url><loc>%s</loc></url>\n' % u for u in urls)
+    xml = ('<?xml version="1.0" encoding="UTF-8"?>\n'
+           '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n' + body + '</urlset>\n')
+    out = os.path.join(ROOT, 'sitemap.xml')
+    with open(out, 'w', encoding='utf-8', newline='\n') as f:
+        f.write(xml)
     return out
 
 
 if __name__ == '__main__':
     for s in META:
         print('built', os.path.relpath(build(s), ROOT))
+    print('built', os.path.relpath(sitemap(), ROOT))

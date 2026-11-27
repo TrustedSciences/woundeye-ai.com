@@ -45,6 +45,6 @@ The site has a short home page plus separate pages for its key areas:
 | Employers & health plans | `/employers-health-plans/` |
 | References | `/references/` |
 
-Each page's content lives in `_build/pages/<page>.html`. The shared header, menu,
-"Return" links, Explore cards and footer live in `_build/build.py`. After editing,
-run `python3 _build/build.py` from the repo root and commit the generated HTML.
+Each page's content lives in `build/pages/<page>.html`. The shared header, menu,
+"Return" links, Explore cards and footer live in `build/build.py`. After editing,
+run `python3 build/build.py` from the repo root and commit the generated HTML.

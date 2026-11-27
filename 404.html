@@ -4,24 +4,99 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Page not found | WoundEye</title>
+  <meta name="description" content="The page you were looking for has moved or does not exist.">
   <meta name="theme-color" content="#ECE3D1">
+  <link rel="canonical" href="https://www.woundeye-ai.com/404/">
   <link rel="icon" href="/images/logo.png" type="image/png">
-  <link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&family=Caladea:ital@0;1&display=swap" rel="stylesheet">
+  <meta property="og:title" content="Page not found | WoundEye">
+  <meta property="og:description" content="The page you were looking for has moved or does not exist.">
+  <meta property="og:image" content="https://www.woundeye-ai.com/images/photo-hero-feet.webp">
+  <meta property="og:url" content="https://www.woundeye-ai.com/404/">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&family=Caladea:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/css/styles.css">
 </head>
-<body>
+<body id="top" class="page-404">
+<a class="skip" href="#main">Skip to content</a>
+
 <header class="site-header">
   <div class="wrap">
-    <a class="brand" href="/"><img src="/images/logo.png" alt="" width="32" height="32"><span class="brand-name">Wound<em>Eye</em></span></a>
+    <a class="brand" href="/" aria-label="WoundEye home">
+      <img src="/images/logo.png" alt="" width="32" height="32">
+      <span class="brand-name">Wound<em>Eye</em></span>
+    </a>
+    <button class="nav-toggle" aria-expanded="false" aria-controls="site-nav">Menu</button>
+    <nav class="nav" id="site-nav" aria-label="Main">
+      <a href="/how-it-works/">How it works</a>
+      <a href="/body-map/">Body map</a>
+      <a href="/assurestage/">AssureStage</a>
+      <div class="nav-drop">
+        <button type="button" aria-expanded="false" aria-haspopup="true">Who it&rsquo;s for <svg class="caret" viewBox="0 0 10 10" aria-hidden="true"><path d="M1.5 3.5 5 7l3.5-3.5" fill="none" stroke="currentColor" stroke-width="1.5"/></svg></button>
+        <div class="drop-panel">
+          <a href="/patients-caregivers/">Patients &amp; caregivers</a>
+          <a href="/clinicians/">Clinicians</a>
+          <a href="/employers-health-plans/">Employers &amp; health plans</a>
+          <a class="drop-all" href="/#use-cases">All use cases</a>
+        </div>
+      </div>
+      <a href="/#why">Why it matters</a>
+      <a href="/#faq">FAQ</a>
+      <a class="btn-ink" href="https://app.woundeye.com/">Sign in</a>
+    </nav>
   </div>
 </header>
-<main class="section notfound">
-  <div class="wrap">
-    <p class="kicker">Error 404</p>
-    <h1>Page not found</h1>
-    <p class="lede mt-1">The page you were looking for has moved or doesn't exist.</p>
-    <div class="btn-row"><a class="btn btn-ink" href="/">Back to the home page</a></div>
-  </div>
+
+<main id="main">
+  <section class="section notfound">
+    <div class="wrap">
+      <p class="kicker">Error 404</p>
+      <h1>Page not found</h1>
+      <p class="lede mt-1">The page you were looking for has moved or doesn't exist.</p>
+      <div class="btn-row"><a class="btn btn-ink" href="/">Back to the home page</a></div>
+    </div>
+  </section>
 </main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <a class="brand" href="/"><img src="/images/logo.png" alt="" width="32" height="32"><span class="brand-name">Wound<em>Eye</em></span></a>
+        <p class="mt-1">Timely human wound care advice — capture, assessment and tracking on any phone.</p>
+      </div>
+      <div>
+        <h4>Explore</h4>
+        <ul>
+          <li><a href="/how-it-works/">How it works</a></li>
+          <li><a href="/body-map/">Interactive body map</a></li>
+          <li><a href="/assurestage/">AssureStage</a></li>
+          <li><a href="/#security">Trust &amp; security</a></li>
+          <li><a href="/references/">References</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Who it&rsquo;s for</h4>
+        <ul>
+          <li><a href="/patients-caregivers/">Patients &amp; caregivers</a></li>
+          <li><a href="/clinicians/">Clinicians</a></li>
+          <li><a href="/employers-health-plans/">Employers &amp; health plans</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Get started</h4>
+        <ul>
+          <li><a href="https://app.woundeye.com/">Sign in</a></li>
+          <li><a href="mailto:access@woundeye.com">access@woundeye.com</a></li>
+          <li><a href="https://www.wounds-ai.com">Wound Solutions AI</a></li>
+        </ul>
+      </div>
+    </div>
+    <p class="foot-legal">WoundEye is a wellness product. It does not diagnose, treat, cure or prevent any disease, and it is not a substitute for professional medical advice. Always consult a qualified clinician about a wound.</p>
+    <p class="foot-legal">© <span id="year">2026</span> Wound Solutions AI. Site by Simon Lee &amp; Associates LLC</p>
+  </div>
+</footer>
+
+<script src="/js/main.js"></script>
 </body>
 </html>
